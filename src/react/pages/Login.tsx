@@ -1,7 +1,9 @@
 interface LoginProps {}
 
+import LayoutHome from "@layout/LayoutHome";
+
 const Login: React.FC<LoginProps> = () => {
-  return <p>hola</p>;
+  return <LayoutHome />;
 };
 
 export default Login;

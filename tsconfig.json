@@ -10,7 +10,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@layout": ["src/components/layout"]
+      "@layout/*": ["src/react/components/layout/*"]
     }
   },
   "include": [
