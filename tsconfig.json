@@ -1,20 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "allowJs": true,
-    "module": "commonjs",
-    "skipLibCheck": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": true,
     "esModuleInterop": true,
-    "noImplicitAny": true,
-    "sourceMap": true,
-    "baseUrl": ".",
-    "outDir": "dist",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
+    "outDir": "./dist",
+    "baseUrl": "./",
     "paths": {
-      "*": ["node_modules/*"]
+      "@layout": ["src/components/layout"]
     }
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "forge.config.ts",
+    "webpack.main.config.ts"
+  ],
+  "exclude": ["node_modules"]
 }
