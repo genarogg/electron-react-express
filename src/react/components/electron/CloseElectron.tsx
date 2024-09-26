@@ -1,14 +1,21 @@
 import React from "react";
-import { ipcRenderer } from "electron";
+const { ipcRenderer } = window.require("electron");
 
-interface CloseElectronProps {}
+import { IoMdClose } from "react-icons/io";
+import { Icono } from "@nano";
 
-const CloseElectron: React.FC<CloseElectronProps> = () => {
+const CloseElectron: React.FC = () => {
   const handleClose = () => {
     ipcRenderer.send("close-window");
   };
 
-  return <button >Cerrar</button>;
+  return (
+    <div className="electron-btn-closed">
+      <button onClick={handleClose}>
+        <Icono icono={<IoMdClose />} />
+      </button>
+    </div>
+  );
 };
 
 export default CloseElectron;

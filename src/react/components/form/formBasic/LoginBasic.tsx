@@ -28,8 +28,8 @@ const LoginBasic: React.FC<LoginBasicProps> = () => {
 
   return (
     <div className="container-form">
-      <CloseElectron />
       <form className="form-basic login" onSubmit={onSubmit}>
+        <CloseElectron />
         <h4 className="title">Iniciar Sesion</h4>
         <Input
           type="text"

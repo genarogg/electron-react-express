@@ -1,0 +1,17 @@
+.electron-btn-closed {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  background-color: $color-secondary;
+  border-radius: 0 50%;
+  height: 20px;
+  width: 20px;
+
+  &,
+  * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
