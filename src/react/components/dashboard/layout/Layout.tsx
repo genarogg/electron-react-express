@@ -8,7 +8,9 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="layout-dashboard">
-      <LayoutElectron title="trotamundos">{children}</LayoutElectron>
+      <LayoutElectron title="e.t. ademar vazquez sanchez">
+        {children}
+      </LayoutElectron>
       <ToastContainer />
     </div>
   );

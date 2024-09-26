@@ -31,8 +31,10 @@
     "src/**/**/*.ts",
     "src/**/*.tsx",
     "src/**/**/*.tsx",
+    "src/**/**/**/*.tsx",
     "forge.config.ts",
     "webpack.main.config.ts"
   ],
   "exclude": ["node_modules"]
+
 }
