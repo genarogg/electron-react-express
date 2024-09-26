@@ -34,9 +34,10 @@ import databaseManager from "./models/index";
 })();
 
 // Importar rutas
-import { inicioRouter } from "./routers/index";
+import { authRouter } from "./routers/index";
 
-app.use("/", inicioRouter);
+/* app.use("/", inicioRouter); */
+app.use("/auth", authRouter);
 
 // Middleware de manejo de errores
 app.use((err: any, req: Request, res: Response, next: Function) => {

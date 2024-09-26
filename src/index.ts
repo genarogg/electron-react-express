@@ -21,13 +21,27 @@ const createWindow = (): void => {
     height: 600,
     width: 800,
     frame: false, // Elimina el marco de la ventana
-    transparent: true, // Hace la ventana transparente (opcional)
+    // transparent: true, // Hace la ventana transparente (opcional)
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       nodeIntegration: true, // Asegúrate de que nodeIntegration esté habilitado
       contextIsolation: false, // Asegúrate de que contextIsolation esté deshabilitado
     },
   });
+
+  // Modificar la política de seguridad de contenido
+  mainWindow.webContents.session.webRequest.onHeadersReceived(
+    (details, callback) => {
+      const csp =
+        "default-src 'self' 'unsafe-inline' 'unsafe-eval' data:; connect-src 'self' http://localhost:4000";
+      callback({
+        responseHeaders: {
+          ...details.responseHeaders,
+          "Content-Security-Policy": [csp],
+        },
+      });
+    }
+  );
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
