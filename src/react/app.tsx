@@ -13,3 +13,11 @@ root.render(
     </Routes>
   </Router>
 );
+
+/* root.render(
+  <Router>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+    </Routes>
+  </Router>
+); */

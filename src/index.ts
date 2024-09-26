@@ -21,7 +21,7 @@ const createWindow = (): void => {
     height: 600,
     width: 800,
     frame: false, // Elimina el marco de la ventana
-    // transparent: true, // Hace la ventana transparente (opcional)
+    transparent: true, // Hace la ventana transparente (opcional)
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       nodeIntegration: true, // Asegúrate de que nodeIntegration esté habilitado
@@ -96,6 +96,12 @@ ipcMain.on("maximize-window", () => {
 ipcMain.on("minimize-window", () => {
   if (mainWindow) {
     mainWindow.minimize();
+  }
+});
+
+ipcMain.on("move-window", (event, x, y) => {
+  if (mainWindow) {
+    mainWindow.setPosition(x, y);
   }
 });
 
