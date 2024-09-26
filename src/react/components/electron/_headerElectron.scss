@@ -1,10 +1,30 @@
+.layout-dashboard{
+  padding-top: 25px;
+}
+
 .header-electron {
   position: fixed;
 
   top: 0;
 
-  .container-title{
-    
+  .container-title {
+    display: flex;
+
+    height: 25px;
+    align-items: center;
+    background-color: #f3f3f3;
+    width: 100vw;
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      margin-left: 10px;
+
+      text-transform: uppercase;
+    }
   }
 
   // colors de los botones de la ventana de linux

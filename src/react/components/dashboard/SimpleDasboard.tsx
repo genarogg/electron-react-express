@@ -5,7 +5,17 @@ const SimpleDashboard: React.FC<SimpleDashboardProps> = () => {
   return (
     <Layout>
       <div className="dashboard simple">
-        <h1>Dashboard</h1>
+        <aside className="aside">
+          <p>aside</p>
+        </aside>
+        <main className="main">
+          <header className="header">
+            <p>header</p>
+          </header>
+          <div className="content">
+            <p>contenido</p>
+          </div>
+        </main>
       </div>
     </Layout>
   );
