@@ -1,14 +1,11 @@
 import React from "react";
 const { ipcRenderer } = window.require("electron");
 
-import { IoClose } from "react-icons/io5";
-import { BsCopy } from "react-icons/bs";
-import { FaRegWindowMinimize } from "react-icons/fa";
-import { Icono } from "@nano";
+interface HeaderElectronProps {
+  title: string;
+}
 
-interface HeaderElectronProps {}
-
-const HeaderElectron: React.FC<HeaderElectronProps> = () => {
+const HeaderElectron: React.FC<HeaderElectronProps> = ({ title }) => {
   const minimizeWindow = () => {
     ipcRenderer.send("minimize-window");
   };
@@ -23,16 +20,13 @@ const HeaderElectron: React.FC<HeaderElectronProps> = () => {
 
   return (
     <div className="header-electron">
+      <div className="container-title">
+        <h1>{title}</h1>
+      </div>
       <div className="container-btns">
-        <button onClick={minimizeWindow} className="minimize">
-          {/* <Icono icono={<FaRegWindowMinimize />} /> */}
-        </button>
-        <button onClick={maximizeWindow} className="maximize">
-          {/* <Icono icono={<BsCopy />} /> */}
-        </button>
-        <button onClick={closeWindow} className="close">
-          {/* <Icono icono={<IoClose />} /> */}
-        </button>
+        <button onClick={minimizeWindow} className="minimize"></button>
+        <button onClick={maximizeWindow} className="maximize"></button>
+        <button onClick={closeWindow} className="close"></button>
       </div>
     </div>
   );

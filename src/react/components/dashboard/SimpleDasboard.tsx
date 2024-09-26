@@ -1,13 +1,13 @@
-import LayoutDashboard from "@layout/LayoutDashboard";
+import Layout from "./layout/Layout";
 interface SimpleDashboardProps {}
 
 const SimpleDashboard: React.FC<SimpleDashboardProps> = () => {
   return (
-    <LayoutDashboard>
-      <div className="dashboard">
+    <Layout>
+      <div className="dashboard simple">
         <h1>Dashboard</h1>
       </div>
-    </LayoutDashboard>
+    </Layout>
   );
 };
 

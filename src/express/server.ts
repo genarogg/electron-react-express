@@ -49,7 +49,7 @@ import fakeData from "./FakeData/index";
 
 app.listen(PORT, () => {
   console.log(
-    chalk.green.bold(`El servidor esta corriendo http://localhost:${PORT}`)
+    /* chalk.green.bold(`El servidor esta corriendo http://localhost:${PORT}`) */
   );
   fakeData();
 });

@@ -1,3 +1,5 @@
 import CloseElectron from "./CloseElectron";
+import HeaderElectron from "./HeaderElectron";
+import LayoutElectron from "./LayoutElectron";
 
-export { CloseElectron };
+export { HeaderElectron, CloseElectron, LayoutElectron };

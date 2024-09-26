@@ -5,19 +5,19 @@ import Dashboard from "./pages/Dashboard";
 import "./scss/style.scss";
 
 const root = createRoot(document.body);
-root.render(
+/* root.render(
   <Router>
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   </Router>
-);
+); */
 
-/* root.render(
+root.render(
   <Router>
     <Routes>
       <Route path="/" element={<Dashboard />} />
     </Routes>
   </Router>
-); */
+);
