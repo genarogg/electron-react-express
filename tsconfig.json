@@ -17,12 +17,18 @@
       "@formSkeleton": ["./src/react/components/form/formSkeleton.tsx"],
       "@fn/*": ["./src/react/functions/*"],
 
+      /* express */
+      "@router": ["./src/express/routers/index.ts"],
+
       /* electron */
-      "@electron": ["./src/react/components/electron/index.tsx"]
+      "@electron": ["./src/react/components/electron/index.tsx"],
+      "@env": ["./env.ts"]
     }
   },
   "include": [
+    "**/**/*.ts",
     "src/**/*.ts",
+    "src/**/**/*.ts",
     "src/**/*.tsx",
     "src/**/**/*.tsx",
     "forge.config.ts",
