@@ -8,9 +8,12 @@ interface LayoutDashboardProps {
 const LayoutDashboard: React.FC<LayoutDashboardProps> = ({ children }) => {
   return (
     <>
-      <HeaderElectron />
-      {children}
-      <ToastContainer />
+      <div className="container-dashboard">
+        {" "}
+        <HeaderElectron />
+        {children}
+        <ToastContainer />
+      </div>
     </>
   );
 };

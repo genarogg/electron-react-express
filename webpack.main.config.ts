@@ -16,5 +16,10 @@ export const mainConfig: Configuration = {
   plugins,
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".json"],
+    alias: {
+      "mock-aws-s3": false,
+      "aws-sdk": false,
+      nock: false,
+    },
   },
 };
