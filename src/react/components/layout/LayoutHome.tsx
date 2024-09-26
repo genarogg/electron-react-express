@@ -1,12 +1,9 @@
-interface LayoutHomeProps {}
+interface LayoutHomeProps {
+  children: React.ReactNode;
+}
 
-
-const LayoutHome: React.FC<LayoutHomeProps> = () => {
-  return (
-    <>
-      <p>LayoutHome</p>
-    </>
-  );
+const LayoutHome: React.FC<LayoutHomeProps> = ({ children }) => {
+  return <>{children}</>;
 };
 
 export default LayoutHome;

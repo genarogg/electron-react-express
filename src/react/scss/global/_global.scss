@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+
+  /* background-image: url(https://unblast.com/wp-content/uploads/2021/01/Space-Background-Images-1536x1024.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+}
+
+a {
+  text-decoration: none;
+  color: $text-color-white;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-quaternary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $color-quaternary;
+}

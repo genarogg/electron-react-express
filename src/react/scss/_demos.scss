@@ -1,0 +1,28 @@
+.demos {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 23px;
+
+  .card {
+    width: 100%;
+    max-width: 1500px;
+    height: 360px;
+    max-height: 800px;
+    /* background-color: #eee; */
+    text-align: center;
+    border: 10px solid #eee;
+    border-radius: 20px;
+    /* box-shadow: inset 5px 5px 10px #bbb, inset -5px -5px 10px #fff; */
+
+    overflow: hidden;
+
+    resize: both;
+  }
+}

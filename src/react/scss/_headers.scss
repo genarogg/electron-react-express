@@ -1,0 +1,14 @@
+.layouts {
+  .resizable-container {
+    width: 100%;
+    max-width: 1500px; /* Puedes ajustar el tamaño máximo según tus necesidades */
+    height: 360px; /* Altura inicial */
+    resize: both; /* Permite redimensionar en ambas direcciones */
+  }
+
+  .styled-iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Elimina el borde del iframe */
+  }
+}

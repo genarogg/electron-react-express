@@ -10,7 +10,12 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@layout/*": ["src/react/components/layout/*"]
+      "@nano": ["./src/react/components/nano/index.tsx"],
+      "@btn": ["./src/react/components/nano/btn/index.tsx"],
+      "@layout/*": ["src/react/components/layout/*"],
+      "@form": ["./src/react/components/nano/form/index.tsx"],
+      "@formSkeleton": ["./src/react/components/form/formSkeleton.tsx"],
+      "@fn/*": ["./src/react/functions/*"]
     }
   },
   "include": [
