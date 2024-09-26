@@ -12,13 +12,16 @@ if (require("electron-squirrel-startup")) {
 
 let mainWindow: BrowserWindow | null;
 
+// Importar el servidor Express
+require("./express/server");
+
 const createWindow = (): void => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     height: 600,
     width: 800,
     frame: false, // Elimina el marco de la ventana
-    //transparent: true, // Hace la ventana transparente (opcional)
+    transparent: true, // Hace la ventana transparente (opcional)
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       nodeIntegration: true, // Asegúrate de que nodeIntegration esté habilitado

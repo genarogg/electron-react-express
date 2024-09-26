@@ -1,7 +1,7 @@
-import { URL_BACKEND } from "@fn/env";
+
 import { notify } from "@nano";
 
-interface SubmitLogin {
+interface submitLogin {
   formData: {
     userName: string;
     password: string;
@@ -19,13 +19,13 @@ interface SubmitLogin {
   >;
 }
 
-const submitLogin = ({ formData, setFormData }: SubmitLogin) => {
+const submitLogin = ({ formData, setFormData }: submitLogin) => {
   const newData = {
     userName: formData.userName,
     password: formData.password,
   };
 
-  fetch(`${URL_BACKEND}/login`, {
+  fetch(`/login`, {
     method: "POST",
     body: JSON.stringify(newData),
     headers: {

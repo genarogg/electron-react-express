@@ -1,3 +1,3 @@
-import submitLogin from "./SubmitLogin";
+import submitLogin from "./submitLogin";
 
 export { submitLogin };
