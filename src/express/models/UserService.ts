@@ -1,4 +1,4 @@
-import databaseManager from "./index";
+import databaseManager from "./configDB";
 
 class UserService {
   private db: any;

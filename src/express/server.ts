@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Conexión a la base de datos
-import databaseManager from "./models/index";
+import databaseManager from "./models/configDB";
 
 (async () => {
   try {
