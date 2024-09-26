@@ -7,6 +7,7 @@ interface submitLogin {
     password: string;
     remember: boolean;
     loading: boolean;
+    sesion: boolean;
   };
 
   setFormData: React.Dispatch<
@@ -15,6 +16,7 @@ interface submitLogin {
       password: string;
       remember: boolean;
       loading: boolean;
+      sesion: boolean;
     }>
   >;
 }
@@ -35,6 +37,16 @@ const submitLogin = ({ formData, setFormData }: submitLogin) => {
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
+      notify({ type: "success", message: res.mensaje });
+
+      if (formData.remember) {
+        localStorage.setItem("token", res.token);
+      }
+
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        sesion: true,
+      }));
     })
     .catch((err) => {
       console.log(err);

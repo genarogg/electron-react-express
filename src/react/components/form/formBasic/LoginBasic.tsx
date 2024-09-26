@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Input } from "@form";
 import { CheckboxBasic, BtnSubmitBasic, BtnText } from "@btn";
 
@@ -18,13 +20,21 @@ const LoginBasic: React.FC<LoginBasicProps> = () => {
     password: "",
     remember: false,
     loading: false,
+    sesion: false,
   });
+
+  const navigate = useNavigate();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setFormData({ ...formData, loading: true });
     submitLogin({ formData, setFormData });
   };
+
+  if (formData.sesion) {
+    navigate("/dashboard");
+  }
 
   return (
     <div className="container-form">
