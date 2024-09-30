@@ -66,7 +66,7 @@ const AddDocente: React.FC<AddDocenteProps> = () => {
       .then((res) => res.json())
       .then((data) => {
         notify({ message: data.message, type: data.type });
-        handleChangeContext(state.sub_context, state.context);
+        handleChangeContext(state.sub_context, "");
         console.log("data", data);
         console.log(data);
       });
