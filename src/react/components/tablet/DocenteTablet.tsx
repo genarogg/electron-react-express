@@ -9,9 +9,9 @@ import docenteColumnDefs from "./data/docenteColumnDefs";
 
 import { BtnNormalBasic } from "@btn";
 
-interface TabletDocenteProps {}
+interface DocenteTabletProps {}
 
-const TabletDocente: React.FC<TabletDocenteProps> = () => {
+const DocenteTablet: React.FC<DocenteTabletProps> = () => {
   const [quickFilterText, setQuickFilterText] = useState<string>("");
 
   return (
@@ -40,4 +40,4 @@ const TabletDocente: React.FC<TabletDocenteProps> = () => {
   );
 };
 
-export default TabletDocente;
+export default DocenteTablet;

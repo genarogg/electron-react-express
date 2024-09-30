@@ -6,6 +6,8 @@ import { HiHome } from "react-icons/hi";
 import { PiTableThin } from "react-icons/pi";
 import { FaCalendarAlt } from "react-icons/fa";
 
+import TabletDocente from "./docente/TabletDocente";
+
 const components = [
   {
     titleSecction: "inicio",
@@ -18,11 +20,11 @@ const components = [
     ],
   },
   {
-    titleSecction: "Tablas",
+    titleSecction: "Empleados",
     elements: [
       {
-        component: Initial2,
-        context: "mis datos",
+        component: TabletDocente,
+        context: "docentes",
         icon: <PiTableThin />,
       },
       {
