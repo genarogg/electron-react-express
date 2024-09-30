@@ -4,7 +4,8 @@
   // max-height: 800px; /* Establece un tamaño máximo para la altura */
   overflow: hidden; /* Oculta el desplazamiento general */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
-  height: 80vh;
+  height: 70vh;
+  cursor: grab;
 }
 
 .ag-theme-alpine .ag-body-viewport {
@@ -40,5 +41,41 @@
     width: 100%;
     background-color: #f8ece3;
     right: 0;
+  }
+}
+
+@media (max-height: 1000px) {
+  .table-container {
+    height: 85vh;
+  }
+}
+
+@media (max-height: 900px) {
+  .table-container {
+    height: 85vh;
+  }
+}
+
+@media (max-height: 800px) {
+  .table-container {
+    height: 69vh;
+  }
+}
+
+@media (max-height: 700px) {
+  .table-container {
+    height: 64vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .table-container {
+    height: 61vh;
+  }
+}
+
+@media (max-height: 500px) {
+  .table-container {
+    height: 55vh;
   }
 }
