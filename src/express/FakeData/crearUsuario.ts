@@ -1,12 +1,15 @@
 import { usuarioEmail, usuarioPassword } from "../../../env";
 import UserService from "../models/UserService";
-
-import bcript from "bcrypt";
+import bcrypt from "bcryptjs";
 
 const crearUsuario = async () => {
   const userService = new UserService();
 
-  userService.createUser(usuarioEmail, bcript.hashSync(usuarioPassword, 10));
+  // Generar un hash de la contraseña
+  const hashedPassword = bcrypt.hashSync(usuarioPassword, 10);
+
+  // Crear el usuario con la contraseña hasheada
+  userService.createUser(usuarioEmail, hashedPassword);
 };
 
 export default crearUsuario;

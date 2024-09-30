@@ -1,9 +1,6 @@
 import { Request, Response } from "express";
-
 import { userService } from "../../models";
-
-import bcrypt from "bcrypt";
-
+import bcrypt from "bcryptjs";
 import { generarToken } from "../../functions";
 
 /* import { Usuario, BitacoraLogin } from "@models"; */
@@ -12,7 +9,7 @@ const loginPost = async (req: Request, res: Response) => {
   // { correo: "example@gmail", contrasena: "123456", captcha: "123456}
   const { userName, password } = req.body;
 
-  const usuario = userService.getUserByEmail(userName);
+  const usuario = await userService.getUserByEmail(userName);
 
   if (!usuario) {
     // El usuario no existe, envía una respuesta indicando que es incorrecto

@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Input } from "@form";
 import { CheckboxBasic, BtnSubmitBasic, BtnText } from "@btn";
+import { notify } from "@nano";
 import { BsEnvelopeFill } from "react-icons/bs";
+
+import { useSimpleNav } from "@components/state/useSimpleNav";
+
+import { URL_BACKEND } from "@env";
 
 import LayoutForm from "../../layoutForm/LayoutForm";
 
@@ -44,16 +49,39 @@ const AddDocente: React.FC<AddDocenteProps> = () => {
     observaciones: "",
   });
 
+  const { state, selectedContext, handleChangeContext } = useSimpleNav();
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
-    // Aquí puedes enviar formData a tu servidor o manejarlo como necesites
+    console.log("URL_BACKEND", `${URL_BACKEND}/docente/add`);
+
+    fetch(`${URL_BACKEND}/docente/add`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        notify({ message: data.message, type: data.type });
+        handleChangeContext(state.sub_context, state.context);
+        console.log("data", data);
+        console.log(data);
+      });
   };
 
   return (
     <LayoutForm>
       <div className="container-form add-docente">
-        <form className="form-basic " onSubmit={onSubmit}>
+        <form
+          className="form-basic "
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSubmit(e);
+          }}
+        >
           <Input
             type="text"
             icono={<BsEnvelopeFill />}
