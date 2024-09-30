@@ -18,8 +18,9 @@ require("./express/server");
 const createWindow = (): void => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800,
+    height: 720,
+    width: 1280,
+
     frame: false, // Elimina el marco de la ventana
     transparent: true, // Hace la ventana transparente (opcional)
     webPreferences: {

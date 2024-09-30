@@ -4,6 +4,8 @@ import AsideSimple from "./aside/AsideSimple";
 import { useContext } from "react";
 import HeaderSimpleDB from "./header/HeaderSimpleDB";
 
+import { LayoutElectron } from "@components/electron";
+
 import MainSimple from "./main/MainSimple";
 
 interface LayoutSimpleDBProps {
@@ -14,7 +16,7 @@ const LayoutSimpleDB: React.FC<LayoutSimpleDBProps> = ({ children }) => {
   const { state } = useContext(GlobalStateContext);
 
   return (
-    <>
+    <LayoutElectron>
       <div className={`simple-db ${state.active_aside ? "aside-active" : ""}`}>
         <AsideSimple />
         <div className="container-simple">
@@ -25,7 +27,7 @@ const LayoutSimpleDB: React.FC<LayoutSimpleDBProps> = ({ children }) => {
         </div>
       </div>
       {/* <footer className="footer-simple">Footer</footer> */}
-    </>
+    </LayoutElectron>
   );
 };
 

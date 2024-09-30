@@ -1,10 +1,10 @@
-.layout-dashboard{
+.layout-dashboard {
   padding-top: 25px;
 }
 
 .header-electron {
   position: fixed;
-
+  z-index: 100000;
   top: 0;
 
   .container-title {

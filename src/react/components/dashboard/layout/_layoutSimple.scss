@@ -5,7 +5,8 @@
   overflow: hidden;
   background-color: #f4f7fe;
   background-color: $color-quaternary;
-
+  width: 100vw;
+  padding-top: 25px;
   * {
     transition: $transition;
   }
@@ -17,6 +18,7 @@
 
     .container-simple {
       padding-left: 0;
+      width: 100vw;
     }
   }
   .simple-aside {

@@ -1,7 +1,7 @@
 import React from "react";
-import Tippy from "@tippyjs/react";
+// import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // Importa los estilos de tippy.js
-import Separador from "@components/dashboard/layout/aside/separador/Separador";
+// import Separador from "@components/dashboard/layout/aside/separador/Separador";
 
 interface MenuToolTipProps {
   children: React.ReactNode;
@@ -12,13 +12,13 @@ interface MenuToolTipProps {
 
 const MenuToolTip: React.FC<MenuToolTipProps> = ({
   children,
-  items,
+  // items,
   className = "",
-  placement = "bottom",
+  // placement = "bottom",
 }) => {
   return (
     <div className={`container-menu-tooltip ${className}`}>
-      <Tippy
+      {/*   <Tippy
         content={
           <ul>
             {items &&
@@ -37,8 +37,9 @@ const MenuToolTip: React.FC<MenuToolTipProps> = ({
         arrow={true}
         placement={placement}
       >
-        <button>{children}</button>
-      </Tippy>
+       
+      </Tippy> */}
+      <button>{children}</button>
     </div>
   );
 };
