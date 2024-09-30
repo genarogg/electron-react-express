@@ -1,4 +1,4 @@
-interface PersonalDocente {
+interface DocentePersonal {
   cod_cir: string;
   nombre_circuito: string;
   comuna: string;
@@ -34,7 +34,7 @@ interface PersonalDocente {
   observaciones: string;
 }
 
-const personalDocente: PersonalDocente[] = [
+const docentePersonal: DocentePersonal[] = [
   {
     cod_cir: "001",
     nombre_circuito: "Circuito 1",
@@ -2137,4 +2137,4 @@ const personalDocente: PersonalDocente[] = [
   },
 ];
 
-export { PersonalDocente, personalDocente };
+export { DocentePersonal, docentePersonal };

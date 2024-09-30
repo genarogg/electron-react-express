@@ -1,9 +1,9 @@
 import { ColDef, ColGroupDef } from "ag-grid-community";
-import { PersonalDocente } from "./personalDocente";
+import { DocentePersonal } from "./docentePersonal";
 
-const columnDefsDocente: (
-  | ColDef<PersonalDocente>
-  | ColGroupDef<PersonalDocente>
+const docenteColumnDefs: (
+  | ColDef<DocentePersonal>
+  | ColGroupDef<DocentePersonal>
 )[] = [
   {
     headerName: "Datos Personales",
@@ -162,4 +162,4 @@ const columnDefsDocente: (
   },
 ];
 
-export default columnDefsDocente;
+export default docenteColumnDefs;

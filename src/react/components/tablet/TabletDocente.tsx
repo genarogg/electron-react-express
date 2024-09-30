@@ -1,11 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
 import LayoutTablet from "./LayoutTablet";
-import { personalDocente } from "./data/personalDocente";
-import columnDefs from "./data/columnDefsDocente";
+import { docentePersonal } from "./data/docentePersonal";
+import docenteColumnDefs from "./data/docenteColumnDefs";
 
 import { BtnNormalBasic } from "@btn";
 
@@ -28,11 +28,11 @@ const TabletDocente: React.FC<TabletDocenteProps> = () => {
       </div>
       <div className="ag-theme-alpine table-container">
         <AgGridReact
-          rowData={personalDocente}
-          columnDefs={columnDefs}
+          rowData={docentePersonal}
+          columnDefs={docenteColumnDefs}
           pagination={true}
           paginationPageSize={30}
-          domLayout="normal"
+          //   domLayout="normal"
           quickFilterText={quickFilterText}
         />
       </div>
