@@ -16,14 +16,17 @@
       "@form": ["./src/react/components/nano/form/index.tsx"],
       "@formSkeleton": ["./src/react/components/form/formSkeleton.tsx"],
       "@fn/*": ["./src/react/functions/*"],
-
+      "@components/*": ["./src/react/components/*"],
+      "@redux": ["./src/react/components/state/Redux.tsx"],
+      "@tooltip": ["./src/react/components/nano/tooltip/Tooltip.tsx"],
       /* express */
       "@router": ["./src/express/routers/index.ts"],
-
+      "@provider": ["./src/react/components/state/Provider.tsx"],
       /* electron */
       "@electron": ["./src/react/components/electron/index.tsx"],
       "@env": ["./env.ts"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
   "include": [
     "**/**/*.ts",
@@ -36,5 +39,4 @@
     "webpack.main.config.ts"
   ],
   "exclude": ["node_modules"]
-
 }
