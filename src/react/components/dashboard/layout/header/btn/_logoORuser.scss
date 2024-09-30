@@ -15,4 +15,13 @@
     border: 2px solid $color-secondary;
     border-radius: 50%;
   }
+
+  .container-img {
+    @include cuadrado(40px);
+    border-radius: 50%;
+
+    svg {
+      @include cuadrado(40px);
+    }
+  }
 }

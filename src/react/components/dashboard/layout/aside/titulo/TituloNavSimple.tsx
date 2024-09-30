@@ -19,7 +19,10 @@ const TituloNavSimple: React.FC<TituloNavSimpleProps> = () => {
         className="nav-title-button"
         onClick={() => handleChangeContext("SimpleDB")}
       >
-        <h2>SimpleDB</h2>
+        <h2>
+          e.t. ademar <br />
+          vasquez chavez
+        </h2>
         <Separador />
       </button>
     </div>

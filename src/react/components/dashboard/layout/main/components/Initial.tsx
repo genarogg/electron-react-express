@@ -1,9 +1,11 @@
 interface InitialProps {}
+import TabletDocente from "@components/tablet/TabletDocente";
+
 
 const Initial: React.FC<InitialProps> = ({}) => {
   return (
     <>
-      <h1>hola {}</h1>
+      <TabletDocente></TabletDocente>
     </>
   );
 };

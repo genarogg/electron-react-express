@@ -5,6 +5,8 @@ import { GlobalStateContext, ActionTypes } from "@redux";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
+import ImgLogo from "src/react/img/ImgLogo";
+
 interface LogoORuserProps {
   size?: number;
 }
@@ -43,12 +45,9 @@ const LogoORuser: React.FC<LogoORuserProps> = ({ size = 40 }) => {
           {isLoading ? (
             <Skeleton circle={true} height={size} width={size} />
           ) : (
-            <img
-              src={imageSrc}
-              alt="logo"
-              onLoad={() => setIsLoading(false)}
-              onError={() => setIsLoading(false)}
-            />
+            <div className="container-img">
+              <ImgLogo />
+            </div>
           )}
         </div>
       </MenuToolTip>

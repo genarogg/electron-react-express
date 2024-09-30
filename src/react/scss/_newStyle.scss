@@ -1,3 +1,15 @@
 .form-basic {
   background-color: #fff;
 }
+
+.header-simple-db{
+  border-bottom: 1px solid $color-secondary;
+}
+
+.simple-db .simple-aside{
+  border-right: 1px solid $color-secondary;
+}
+
+.simple-db .closed-nav-simple{
+  background-color: $color-secondary;
+}
