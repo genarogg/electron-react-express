@@ -31,9 +31,10 @@ const TabletDocente: React.FC<TabletDocenteProps> = ({}) => {
     fetchDocentes();
   }, []);
 
-  console.log("docentes", docentes);
-
-  const datos = [docentes, docenteColumnDefs];
+  const datos = [
+    docentes.length > 0 ? docentes : docentePersonal,
+    docenteColumnDefs,
+  ];
 
   return (
     <>

@@ -9,7 +9,7 @@ const docenteColumnDefs: (
   {
     headerName: "ID",
     field: "id",
-    width: 50,
+    width: 100,
   },
   {
     headerName: "Datos Personales",
