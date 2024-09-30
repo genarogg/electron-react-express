@@ -1,10 +1,16 @@
 import { ColDef, ColGroupDef } from "ag-grid-community";
 import { DocentePersonal } from "./docentePersonal";
+import ActionsCellRenderer from "./cell-renderers/ActionsCellRenderer";
 
 const docenteColumnDefs: (
   | ColDef<DocentePersonal>
   | ColGroupDef<DocentePersonal>
 )[] = [
+  {
+    headerName: "ID",
+    field: "id",
+    width: 50,
+  },
   {
     headerName: "Datos Personales",
     children: [
@@ -160,6 +166,13 @@ const docenteColumnDefs: (
       { headerName: "OBSERVACIONES", field: "observaciones", filter: true },
     ],
   },
+  {
+    headerName: "Acciones",
+    cellRenderer: (params: any) => {
+      return ActionsCellRenderer(params);
+    },
+  },
 ];
+
 
 export default docenteColumnDefs;
