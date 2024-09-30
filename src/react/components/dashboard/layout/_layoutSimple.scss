@@ -7,6 +7,7 @@
   background-color: $color-quaternary;
   width: 100vw;
   padding-top: 25px;
+  overflow-y: auto;
   * {
     transition: $transition;
   }

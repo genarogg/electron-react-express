@@ -24,5 +24,5 @@ export const useSimpleNav = () => {
     setSelectedSubContext(state.sub_context);
   }, [state.sub_context]);
 
-  return { selectedContext, selectedSubContext, handleChangeContext };
+  return { state, selectedContext, selectedSubContext, handleChangeContext };
 };

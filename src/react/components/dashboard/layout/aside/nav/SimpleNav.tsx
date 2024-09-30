@@ -1,7 +1,7 @@
 import React from "react";
 import { Icono } from "@nano";
 import { BtnNormalBasic } from "@btn";
-import { useSimpleNav } from "../../fn/useSimpleNav";
+import { useSimpleNav } from "../../../../state/useSimpleNav";
 
 import { components } from "../../main/components/Components";
 
@@ -10,15 +10,17 @@ interface SimpleNavProps {}
 const SimpleNav: React.FC<SimpleNavProps> = () => {
   const { selectedContext, handleChangeContext } = useSimpleNav();
 
-  const navSections = components.map((section) => ({
-    title: section.titleSecction,
-    items: section.elements.map((element) => ({
-      context: element.context,
-      text: element.context,
-      icon: element.icon,
-    })),
-  }));
-
+  const navSections = components
+    .filter((section) => section.titleSecction !== "otros")
+    .map((section) => ({
+      title: section.titleSecction,
+      items: section.elements.map((element) => ({
+        context: element.context,
+        text: element.context,
+        icon: element.icon,
+      })),
+    }));
+    
   return (
     <div className="container-nav-simple">
       {navSections.map((section, sectionIndex) => (

@@ -5,7 +5,7 @@ import Separador from "../separador/Separador";
 interface TituloNavSimpleProps {}
 
 const TituloNavSimple: React.FC<TituloNavSimpleProps> = () => {
-  const { state, dispatch } = useContext(GlobalStateContext);
+  const { dispatch } = useContext(GlobalStateContext);
   const [selectedContext, setSelectedContext] = useState<string | null>("");
 
   const handleChangeContext = (newContext: string) => {
