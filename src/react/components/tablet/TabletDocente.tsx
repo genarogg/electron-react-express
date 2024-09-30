@@ -1,340 +1,37 @@
-import React from "react";
-import { Grid } from "gridjs-react";
-import "gridjs/dist/theme/mermaid.css";
+import React, { useState } from "react";
+import { AgGridReact } from "ag-grid-react";
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-alpine.css";
+
+import LayoutTablet from "./LayoutTablet";
+import { personalDocente } from "./data/personalDocente";
+import columnDefs from "./data/columnDefsDocente";
 
 interface TabletDocenteProps {}
 
 const TabletDocente: React.FC<TabletDocenteProps> = () => {
-  // Datos estáticos para el personal docente
-  const personalDocente = [
-    {
-      nombres: "Juan",
-      apellidos: "Pérez",
-      ci: "12345678",
-      fecha_nac: "12/12/1980",
-      telefono: "555-1234",
-      direccion: "Calle Falsa 123",
-      correo: "juan@example.com",
-      fecha_ingreso_mppe: "01/01/2010",
-      anos_servicio: 14,
-      carnet_patria: "987654321",
-      centro_votacion: "Centro X",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "María",
-      apellidos: "García",
-      ci: "87654321",
-      fecha_nac: "25/06/1975",
-      telefono: "555-4321",
-      direccion: "Av. Principal 456",
-      correo: "maria@example.com",
-      fecha_ingreso_mppe: "05/09/2005",
-      anos_servicio: 19,
-      carnet_patria: "123456789",
-      centro_votacion: "Centro Y",
-      tipo_voto: "Nulo",
-    },
-    {
-      nombres: "Carlos",
-      apellidos: "Rodríguez",
-      ci: "34567890",
-      fecha_nac: "15/08/1985",
-      telefono: "555-6789",
-      direccion: "Calle Nueva 789",
-      correo: "carlos@example.com",
-      fecha_ingreso_mppe: "12/03/2012",
-      anos_servicio: 12,
-      carnet_patria: "234567890",
-      centro_votacion: "Centro Z",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Ana",
-      apellidos: "López",
-      ci: "45678901",
-      fecha_nac: "30/11/1982",
-      telefono: "555-9876",
-      direccion: "Av. Central 101",
-      correo: "ana@example.com",
-      fecha_ingreso_mppe: "22/05/2008",
-      anos_servicio: 16,
-      carnet_patria: "345678901",
-      centro_votacion: "Centro A",
-      tipo_voto: "Nulo",
-    },
-    {
-      nombres: "Pedro",
-      apellidos: "Martínez",
-      ci: "56789012",
-      fecha_nac: "10/10/1979",
-      telefono: "555-2468",
-      direccion: "Calle Vieja 202",
-      correo: "pedro@example.com",
-      fecha_ingreso_mppe: "17/11/2001",
-      anos_servicio: 23,
-      carnet_patria: "456789012",
-      centro_votacion: "Centro B",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Sofía",
-      apellidos: "Fernández",
-      ci: "67890123",
-      fecha_nac: "05/07/1990",
-      telefono: "555-1357",
-      direccion: "Av. Sur 303",
-      correo: "sofia@example.com",
-      fecha_ingreso_mppe: "03/01/2014",
-      anos_servicio: 10,
-      carnet_patria: "567890123",
-      centro_votacion: "Centro C",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Miguel",
-      apellidos: "Gómez",
-      ci: "78901234",
-      fecha_nac: "22/02/1988",
-      telefono: "555-3579",
-      direccion: "Calle Norte 404",
-      correo: "miguel@example.com",
-      fecha_ingreso_mppe: "29/08/2010",
-      anos_servicio: 14,
-      carnet_patria: "678901234",
-      centro_votacion: "Centro D",
-      tipo_voto: "Nulo",
-    },
-    {
-      nombres: "Laura",
-      apellidos: "Sánchez",
-      ci: "89012345",
-      fecha_nac: "01/04/1983",
-      telefono: "555-7531",
-      direccion: "Av. Oeste 505",
-      correo: "laura@example.com",
-      fecha_ingreso_mppe: "18/07/2007",
-      anos_servicio: 17,
-      carnet_patria: "789012345",
-      centro_votacion: "Centro E",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Diego",
-      apellidos: "Jiménez",
-      ci: "90123456",
-      fecha_nac: "19/09/1992",
-      telefono: "555-1593",
-      direccion: "Calle Sur 606",
-      correo: "diego@example.com",
-      fecha_ingreso_mppe: "07/10/2015",
-      anos_servicio: 9,
-      carnet_patria: "890123456",
-      centro_votacion: "Centro F",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Marta",
-      apellidos: "Torres",
-      ci: "01234567",
-      fecha_nac: "26/03/1986",
-      telefono: "555-9517",
-      direccion: "Av. Este 707",
-      correo: "marta@example.com",
-      fecha_ingreso_mppe: "09/02/2011",
-      anos_servicio: 13,
-      carnet_patria: "901234567",
-      centro_votacion: "Centro G",
-      tipo_voto: "Nulo",
-    },
-    {
-      nombres: "Luis",
-      apellidos: "Rivera",
-      ci: "12340123",
-      fecha_nac: "14/01/1978",
-      telefono: "555-8642",
-      direccion: "Calle Cumbre 100",
-      correo: "luis@example.com",
-      fecha_ingreso_mppe: "15/03/2000",
-      anos_servicio: 24,
-      carnet_patria: "234567891",
-      centro_votacion: "Centro H",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Patricia",
-      apellidos: "Ortiz",
-      ci: "23451234",
-      fecha_nac: "09/11/1995",
-      telefono: "555-9742",
-      direccion: "Av. Principal 800",
-      correo: "patricia@example.com",
-      fecha_ingreso_mppe: "25/08/2018",
-      anos_servicio: 6,
-      carnet_patria: "345678912",
-      centro_votacion: "Centro I",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Andrés",
-      apellidos: "Vargas",
-      ci: "34561234",
-      fecha_nac: "03/05/1991",
-      telefono: "555-6324",
-      direccion: "Calle Vista 500",
-      correo: "andres@example.com",
-      fecha_ingreso_mppe: "19/10/2013",
-      anos_servicio: 11,
-      carnet_patria: "456789123",
-      centro_votacion: "Centro J",
-      tipo_voto: "Nulo",
-    },
-    {
-      nombres: "Julia",
-      apellidos: "Morales",
-      ci: "45671234",
-      fecha_nac: "29/12/1981",
-      telefono: "555-4731",
-      direccion: "Av. Larga 900",
-      correo: "julia@example.com",
-      fecha_ingreso_mppe: "06/04/2006",
-      anos_servicio: 18,
-      carnet_patria: "567890234",
-      centro_votacion: "Centro K",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Jorge",
-      apellidos: "Castro",
-      ci: "56782345",
-      fecha_nac: "18/06/1980",
-      telefono: "555-2984",
-      direccion: "Calle Alta 110",
-      correo: "jorge@example.com",
-      fecha_ingreso_mppe: "11/07/2004",
-      anos_servicio: 20,
-      carnet_patria: "678901345",
-      centro_votacion: "Centro L",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Rosa",
-      apellidos: "Romero",
-      ci: "67893456",
-      fecha_nac: "07/03/1974",
-      telefono: "555-1111",
-      direccion: "Av. Arboleda 120",
-      correo: "rosa@example.com",
-      fecha_ingreso_mppe: "14/09/1998",
-      anos_servicio: 26,
-      carnet_patria: "789012456",
-      centro_votacion: "Centro M",
-      tipo_voto: "Nulo",
-    },
-    {
-      nombres: "Esteban",
-      apellidos: "Díaz",
-      ci: "78904567",
-      fecha_nac: "02/10/1987",
-      telefono: "555-2525",
-      direccion: "Calle Real 130",
-      correo: "esteban@example.com",
-      fecha_ingreso_mppe: "23/06/2009",
-      anos_servicio: 15,
-      carnet_patria: "890123567",
-      centro_votacion: "Centro N",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Carmen",
-      apellidos: "Cruz",
-      ci: "89015678",
-      fecha_nac: "21/07/1989",
-      telefono: "555-3434",
-      direccion: "Av. Libertad 140",
-      correo: "carmen@example.com",
-      fecha_ingreso_mppe: "16/11/2011",
-      anos_servicio: 13,
-      carnet_patria: "901234678",
-      centro_votacion: "Centro O",
-      tipo_voto: "Duro",
-    },
-    {
-      nombres: "Tomás",
-      apellidos: "Ruiz",
-      ci: "90126789",
-      fecha_nac: "31/08/1977",
-      telefono: "555-4545",
-      direccion: "Calle Paz 150",
-      correo: "tomas@example.com",
-      fecha_ingreso_mppe: "30/05/1999",
-      anos_servicio: 25,
-      carnet_patria: "012345789",
-      centro_votacion: "Centro P",
-      tipo_voto: "Nulo",
-    },
-    {
-      nombres: "Angela",
-      apellidos: "Reyes",
-      ci: "01237890",
-      fecha_nac: "13/04/1984",
-      telefono: "555-5656",
-      direccion: "Av. Independencia 160",
-      correo: "angela@example.com",
-      fecha_ingreso_mppe: "04/12/2008",
-      anos_servicio: 16,
-      carnet_patria: "123456890",
-      centro_votacion: "Centro Q",
-      tipo_voto: "Duro",
-    },
-  ];
-  
+  const [quickFilterText, setQuickFilterText] = useState<string>("");
 
   return (
-    <Grid
-      data={personalDocente.map((docente:any) => [
-        docente.nombres,
-        docente.apellidos,
-        docente.ci,
-        docente.fecha_nac,
-        docente.telefono,
-        docente.direccion,
-        docente.correo,
-        docente.fecha_ingreso_mppe,
-        docente.anos_servicio,
-        docente.carnet_patria,
-        docente.centro_votacion,
-        docente.tipo_voto,
-      ])}
-      columns={[
-        {
-          name: "Datos Personales",
-          columns: ["Nombres", "Apellidos", "C.I", "Fecha de Nac.", "Teléfono"],
-        },
-        {
-          name: "Información Laboral",
-          columns: [
-            "Dirección de Habitación",
-            "Correo Electrónico",
-            "Fecha de Ingreso MPPE",
-            "Años de Servicio",
-          ],
-        },
-        {
-          name: "Carnet y Votación",
-          columns: [
-            "Carnet Patria (N° Código)",
-            "Nombre del Centro de Votación",
-            "Tipo de Voto",
-          ],
-        },
-      ]}
-      pagination={{
-        limit: 5,
-      }}
-      search={true}
-      sort={true}
-    />
+    <LayoutTablet>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Buscar..."
+          onChange={(e) => setQuickFilterText(e.target.value)}
+        />
+      </div>
+      <div className="ag-theme-alpine table-container">
+        <AgGridReact
+          rowData={personalDocente}
+          columnDefs={columnDefs}
+          pagination={true}
+          paginationPageSize={30}
+          domLayout="normal"
+          quickFilterText={quickFilterText}
+        />
+      </div>
+    </LayoutTablet>
   );
 };
 

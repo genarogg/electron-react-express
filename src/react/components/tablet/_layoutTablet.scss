@@ -1,0 +1,44 @@
+.table-container {
+  /* height: 600px; */ /* Establece una altura específica */
+  /* Ocupa el 100% del ancho del contenedor principal */
+  // max-height: 800px; /* Establece un tamaño máximo para la altura */
+  overflow: hidden; /* Oculta el desplazamiento general */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  height: 80vh;
+}
+
+.ag-theme-alpine .ag-body-viewport {
+  overflow-y: auto; /* Habilita el desplazamiento vertical solo en las filas */
+  max-height: 100%; /* Asegura que el desplazamiento se aplique correctamente */
+}
+
+.search-container {
+  margin-bottom: 10px; /* Espacio entre el campo de búsqueda y la tabla */
+}
+
+.container-tablet {
+  .search-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 42px;
+
+    input {
+      border: 1px solid $color-secondary;
+      outline: none;
+      border-radius: 10px;
+      height: 32px;
+      width: 280px;
+      padding: 3px 10px;
+      color: $text-color-white;
+      background-color: $color-quaternary;
+    }
+  }
+
+  .ag-paging-panel.ag-unselectable.ag-focus-managed {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: #f8ece3;
+    right: 0;
+  }
+}

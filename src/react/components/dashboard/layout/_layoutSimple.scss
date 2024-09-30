@@ -48,6 +48,7 @@
     border-radius: 0 0 30px 0;
     clip-path: polygon(0 0, 0% 100%, 100% 0);
     overflow: hidden;
+z-index: 1000000;
 
     button {
       // @include cuadrado(20px);
