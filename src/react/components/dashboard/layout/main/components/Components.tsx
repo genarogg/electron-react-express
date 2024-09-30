@@ -1,8 +1,6 @@
 import Initial from "./Initial";
 import Initial2 from "./Initial2";
 
-
-
 // @iconos
 import { HiHome } from "react-icons/hi";
 import { PiTableThin } from "react-icons/pi";
@@ -10,6 +8,9 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 import TabletDocente from "./docente/TabletDocente";
 import AddDocente from "./docente/crud/AddDocente";
+
+import TabletObrero from "./obreros/TabletObrero";
+
 const components = [
   {
     titleSecction: "inicio",
@@ -29,9 +30,10 @@ const components = [
         context: "docentes",
         icon: <PiTableThin />,
       },
+
       {
-        component: Initial,
-        context: "mis da2tos",
+        component: TabletObrero,
+        context: "obreros",
         icon: <PiTableThin />,
       },
     ],
@@ -42,11 +44,6 @@ const components = [
       {
         component: Initial2,
         context: "bitacora",
-        icon: <FaCalendarAlt />,
-      },
-      {
-        component: Initial2,
-        context: "datos",
         icon: <FaCalendarAlt />,
       },
     ],

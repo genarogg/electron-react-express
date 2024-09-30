@@ -1,8 +1,8 @@
 import React from "react";
-import { DocentePersonal } from "../docentePersonal";
-
+import { DocentePersonal } from "../docente/data/docentePersonal";
+import { ObreroPersonal } from "../obreros/data/obreroPersonal";
 interface ActionsCellRendererProps {
-  data: DocentePersonal;
+  data: DocentePersonal | ObreroPersonal;
 }
 
 const ActionsCellRenderer: React.FC<ActionsCellRendererProps> = ({ data }) => {

@@ -1,0 +1,22 @@
+.add-docente {
+  .form-basic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .checkbox-basic {
+      border: 1px solid #aaa;
+      border-radius: 10px;
+      height: 46px;
+      position: relative;
+      width: 100%;
+      display: flex;
+      cursor: pointer;
+
+      max-width: initial;
+    }
+
+    .btn-submit-basic  {
+      grid-column: span 2;
+    }
+  }
+}

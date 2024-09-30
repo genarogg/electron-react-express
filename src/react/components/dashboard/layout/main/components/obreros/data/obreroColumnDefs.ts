@@ -1,10 +1,10 @@
 import { ColDef, ColGroupDef } from "ag-grid-community";
-import { DocentePersonal } from "./docentePersonal";
+import { ObreroPersonal } from "./obreroPersonal";
 import ActionsCellRenderer from "../../cell-renderers/ActionsCellRenderer";
 
-const docenteColumnDefs: (
-  | ColDef<DocentePersonal>
-  | ColGroupDef<DocentePersonal>
+const obreroColumnDefs: (
+  | ColDef<ObreroPersonal>
+  | ColGroupDef<ObreroPersonal>
 )[] = [
   {
     headerName: "ID",
@@ -12,7 +12,7 @@ const docenteColumnDefs: (
     width: 100,
   },
   {
-    headerName: "Datos del plantel",
+    headerName: "Datos del plante",
     children: [
       { headerName: "CÓD-CIR", field: "cod_cir", filter: true },
       {
@@ -47,12 +47,7 @@ const docenteColumnDefs: (
         field: "direccion_institucion",
         filter: true,
       },
-      {
-        headerName:
-          "DEPENDECIA: NACIONAL, ESTADAL, PRIVADA, AUTONOMA, SUBVENCIONADA",
-        field: "dependencia",
-        filter: true,
-      },
+
       {
         headerName: "NIVEL O MODALIDAD",
         field: "nivel_modalidad",
@@ -61,17 +56,28 @@ const docenteColumnDefs: (
     ],
   },
   {
-    headerName: "Datos del Personal Docente",
+    headerName: "DATOS DEL PERSONAL OBRERO",
     children: [
       { headerName: "NOMBRES", field: "nombres", filter: true },
       { headerName: "APELLIDOS", field: "apellidos", filter: true },
       { headerName: "C.I", field: "ci", filter: true },
+      { headerName: "ACARIGUA", field: "acarigua", filter: true },
       {
         headerName: "FECHA DE NAC. (DD/MM/AA)",
         field: "fecha_nac",
         filter: true,
       },
-      { headerName: "CORREO ELECTRÓNICO", field: "correo", filter: true },
+      { headerName: "TELÉFONO", field: "telefono", filter: true },
+      {
+        headerName: "DIRECCIÓN DE HABITACIÓN",
+        field: "direccion_de_habitacion",
+        filter: true,
+      },
+      {
+        headerName: "CORREO ELECTRÓNICO",
+        field: "correo_electronico",
+        filter: true,
+      },
       {
         headerName: "FECHA DE INGRESO MPPE",
         field: "fecha_ingreso_mppe",
@@ -79,21 +85,11 @@ const docenteColumnDefs: (
       },
       { headerName: "AÑOS DE SERVICIO", field: "anos_servicio", filter: true },
       {
-        headerName: "TÍTULO PRE-GRADO",
-        field: "titulo_pregrado",
+        headerName: "TÍTULO OBTENIDO",
+        field: "titulo_obtenido",
         filter: true,
       },
-      {
-        headerName:
-          "FUNCIÓN QUE CUMPLE (DIR. - SUB. DIR- DOC. AULA - DOC. ESPEC - COORDINADOR",
-        field: "funcion",
-        filter: true,
-      },
-      {
-        headerName: "AREA DEL DOCENTE ESPECIALISTA",
-        field: "area_docente_especialista",
-        filter: true,
-      },
+
       {
         headerName: "CÓDIGO / CARGO (SEGÚN RECIBO DE PAGO)",
         field: "codigo_cargo",
@@ -104,11 +100,7 @@ const docenteColumnDefs: (
         field: "dependencia_nominal",
         filter: true,
       },
-      {
-        headerName: "GRADO Y SECCIÓN QUE ATIENDE",
-        field: "grado_seccion",
-        filter: true,
-      },
+
       {
         headerName: "ESTATUS (ACTIVO - INACTIVO)",
         field: "estatus",
@@ -174,4 +166,4 @@ const docenteColumnDefs: (
   },
 ];
 
-export default docenteColumnDefs;
+export default obreroColumnDefs;
