@@ -54,19 +54,3 @@ const TabletTrabajador: React.FC<TabletTrabajadorProps> = ({
 };
 
 export default TabletTrabajador;
-function useContext(
-  GlobalStateContext: React.Context<{
-    state: import("@components/state/Redux").State;
-    dispatch: React.Dispatch<
-      | { type: "LOGIN" }
-      | { type: "LOGOUT" }
-      | { type: "SET_CONTEXT"; payload: string }
-      | { type: "SET_SUB_CONTEXT"; payload: string }
-      | { type: "RESET_STATE" }
-      | { type: "SET_ACTIVE_ASIDE"; payload: boolean }
-      | { type: "SET_USER_IMAGE"; payload: string }
-    >;
-  }>
-): { state: any } {
-  throw new Error("Function not implemented.");
-}
