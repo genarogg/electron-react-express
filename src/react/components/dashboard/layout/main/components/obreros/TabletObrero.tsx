@@ -6,20 +6,20 @@ import React, { useEffect, useState } from "react";
 import { obreroPersonal, ObreroPersonal } from "./data/obreroPersonal";
 import docenteColumnDefs from "./data/obreroColumnDefs";
 
-const TabletObrero: React.FC<TabletObreroProps> = ({}) => {
+const TabletObrero: React.FC<TabletObreroProps> = () => {
   const irAnadirObrero = () => {
     console.log("ir a añadir docente");
   };
 
-  const [docentes, setDocentes] = useState<ObreroPersonal[]>([]);
+  const [obreros, setObreros] = useState<ObreroPersonal[]>([]);
 
   useEffect(() => {
-    const fetchDocentes = async () => {
+    const fetchObreros = async () => {
       try {
-        const response = await fetch(`${URL_BACKEND}/docente/get`);
+        const response = await fetch(`${URL_BACKEND}/obrero/get`);
         const data = await response.json();
         if (data.type === "success") {
-          setDocentes(data.docentes);
+          setObreros(data.obreros);
         } else {
           console.error("Error al recuperar los datos de los docentes:", data);
         }
@@ -28,20 +28,21 @@ const TabletObrero: React.FC<TabletObreroProps> = ({}) => {
       }
     };
 
-    fetchDocentes();
+    fetchObreros();
   }, []);
 
   const datos = [
-    docentes.length > 0 ? docentes : obreroPersonal,
+    obreros.length > 0 ? obreros : obreroPersonal,
     docenteColumnDefs,
   ];
 
   return (
     <>
       <TabletTrabajador
-        nameTabla="docente"
+        nameTabla="obreros"
         onClick={irAnadirObrero}
         datos={datos}
+        ir={"agregar obrero"}
       />
     </>
   );

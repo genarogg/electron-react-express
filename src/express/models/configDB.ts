@@ -15,6 +15,7 @@ class DatabaseManager {
     this.db = new Database(basePath);
     this.createUsersTable();
     this.createDocentesTable(); // Crear la tabla 'docentes'
+    this.createObrerosTable(); // Crear la tabla 'obreros'
   }
 
   private createUsersTable() {
@@ -77,6 +78,52 @@ class DatabaseManager {
       this.db.exec(createTableQuery);
     } catch (error) {
       console.error("Error al crear la tabla 'docentes':", error);
+    }
+  }
+
+  private createObrerosTable() {
+    const createTableQuery = `
+      CREATE TABLE IF NOT EXISTS obreros (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        cod_cir TEXT,
+        nombre_circuito TEXT,
+        comuna TEXT,
+        consejo_comunal TEXT,
+        codigo_plantel TEXT,
+        codigo_estadistico TEXT,
+        codigo_dependencia TEXT,
+        nombre_plantel TEXT,
+        direccion_institucion TEXT,
+        nivel_modalidad TEXT,
+        nombres TEXT,
+        apellidos TEXT,
+        ci TEXT,
+        acarigua TEXT,
+        fecha_nac TEXT,
+        telefono TEXT,
+        direccion_de_habitacion TEXT,
+        correo_electronico TEXT,
+        fecha_ingreso_mppe TEXT,
+        anos_servicio INTEGER,
+        titulo_obtenido TEXT,
+        codigo_cargo TEXT,
+        dependencia_nominal TEXT,
+        estatus TEXT,
+        reposo_permiso TEXT,
+        inscrito_psuv TEXT,
+        pertenece_movimiento_social TEXT,
+        carnet_patria_codigo TEXT,
+        carnet_patria_serial TEXT,
+        tipo_voto TEXT,
+        centro_votacion TEXT,
+        observaciones TEXT
+      );
+    `;
+
+    try {
+      this.db.exec(createTableQuery);
+    } catch (error) {
+      console.error("Error al crear la tabla 'obreros':", error);
     }
   }
 

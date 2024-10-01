@@ -42,6 +42,7 @@ const TabletDocente: React.FC<TabletDocenteProps> = ({}) => {
         nameTabla="docente"
         onClick={irAnadirDocente}
         datos={datos}
+        ir={"agregar docente"}
       />
     </>
   );

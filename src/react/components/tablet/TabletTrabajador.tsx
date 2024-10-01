@@ -12,19 +12,21 @@ interface TabletTrabajadorProps {
   nameTabla: string;
   onClick: () => void;
   datos: any;
+  ir: string;
 }
 
 const TabletTrabajador: React.FC<TabletTrabajadorProps> = ({
   nameTabla,
   onClick,
   datos,
+  ir,
 }) => {
   const { state, selectedContext, handleChangeContext } = useSimpleNav();
   const [quickFilterText, setQuickFilterText] = useState<string>("");
 
   const combinedFunction = () => {
     onClick();
-    handleChangeContext("add docente", state.context);
+    handleChangeContext(ir, state.context);
   };
 
   return (

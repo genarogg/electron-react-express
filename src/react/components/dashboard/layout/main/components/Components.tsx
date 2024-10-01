@@ -10,7 +10,7 @@ import TabletDocente from "./docente/TabletDocente";
 import AddDocente from "./docente/crud/AddDocente";
 
 import TabletObrero from "./obreros/TabletObrero";
-
+import AddObrero from "./obreros/crud/AddObrero";
 const components = [
   {
     titleSecction: "inicio",
@@ -53,12 +53,12 @@ const components = [
     elements: [
       {
         component: AddDocente,
-        context: "add docente",
+        context: "agregar docente",
         icon: <FaCalendarAlt />,
       },
       {
-        component: Initial2,
-        context: "datos",
+        component: AddObrero,
+        context: "agregar obrero",
         icon: <FaCalendarAlt />,
       },
     ],

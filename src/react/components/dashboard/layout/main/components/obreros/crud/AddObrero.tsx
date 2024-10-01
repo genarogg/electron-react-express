@@ -10,9 +10,9 @@ import { URL_BACKEND } from "@env";
 
 import LayoutForm from "../../layoutForm/LayoutForm";
 
-interface AddDocenteProps {}
+interface AddObreroProps {}
 
-const AddDocente: React.FC<AddDocenteProps> = () => {
+const AddObrero: React.FC<AddObreroProps> = () => {
   const [formData, setFormData] = useState({
     cod_cir: "",
     nombre_circuito: "",
@@ -23,29 +23,28 @@ const AddDocente: React.FC<AddDocenteProps> = () => {
     codigo_dependencia: "",
     nombre_plantel: "",
     direccion_institucion: "",
-    dependencia: "",
     nivel_modalidad: "",
     nombres: "",
     apellidos: "",
     ci: "",
+    acarigua: "",
     fecha_nac: "",
-    correo: "",
+    telefono: "",
+    direccion_de_habitacion: "",
+    correo_electronico: "",
     fecha_ingreso_mppe: "",
     anos_servicio: "",
-    titulo_pregrado: "",
-    funcion: "",
-    area_docente_especialista: "",
+    titulo_obtenido: "",
     codigo_cargo: "",
     dependencia_nominal: "",
-    grado_seccion: "",
     estatus: "",
     reposo_permiso: "",
     inscrito_psuv: "",
     pertenece_movimiento_social: "",
     carnet_patria_codigo: "",
     carnet_patria_serial: "",
-    tipo_voto: "",
     centro_votacion: "",
+    tipo_voto: "",
     observaciones: "",
   });
 
@@ -54,9 +53,9 @@ const AddDocente: React.FC<AddDocenteProps> = () => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
-    console.log("URL_BACKEND", `${URL_BACKEND}/docente/add`);
+    console.log("URL_BACKEND", `${URL_BACKEND}/obrero/add`);
 
-    fetch(`${URL_BACKEND}/docente/add`, {
+    fetch(`${URL_BACKEND}/obrero/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -178,16 +177,6 @@ const AddDocente: React.FC<AddDocenteProps> = () => {
           <Input
             type="text"
             icono={<BsEnvelopeFill />}
-            placeholder="Dependencia"
-            name="dependencia"
-            value={formData.dependencia}
-            valueChange={(e) =>
-              setFormData({ ...formData, dependencia: e.target.value })
-            }
-          />
-          <Input
-            type="text"
-            icono={<BsEnvelopeFill />}
             placeholder="Nivel Modalidad"
             name="nivel_modalidad"
             value={formData.nivel_modalidad}
@@ -235,13 +224,36 @@ const AddDocente: React.FC<AddDocenteProps> = () => {
             }
           />
           <Input
+            type="text"
+            icono={<BsEnvelopeFill />}
+            placeholder="Teléfono"
+            name="telefono"
+            value={formData.telefono}
+            valueChange={(e) =>
+              setFormData({ ...formData, telefono: e.target.value })
+            }
+          />
+          <Input
+            type="text"
+            icono={<BsEnvelopeFill />}
+            placeholder="Dirección de Habitación"
+            name="direccion_de_habitacion"
+            value={formData.direccion_de_habitacion}
+            valueChange={(e) =>
+              setFormData({
+                ...formData,
+                direccion_de_habitacion: e.target.value,
+              })
+            }
+          />
+          <Input
             type="email"
             icono={<BsEnvelopeFill />}
-            placeholder="Correo"
-            name="correo"
-            value={formData.correo}
+            placeholder="Correo Electrónico"
+            name="correo_electronico"
+            value={formData.correo_electronico}
             valueChange={(e) =>
-              setFormData({ ...formData, correo: e.target.value })
+              setFormData({ ...formData, correo_electronico: e.target.value })
             }
           />
           <Input
@@ -266,34 +278,11 @@ const AddDocente: React.FC<AddDocenteProps> = () => {
           <Input
             type="text"
             icono={<BsEnvelopeFill />}
-            placeholder="Título de Pregrado"
-            name="titulo_pregrado"
-            value={formData.titulo_pregrado}
+            placeholder="Título Obtenido"
+            name="titulo_obtenido"
+            value={formData.titulo_obtenido}
             valueChange={(e) =>
-              setFormData({ ...formData, titulo_pregrado: e.target.value })
-            }
-          />
-          <Input
-            type="text"
-            icono={<BsEnvelopeFill />}
-            placeholder="Función"
-            name="funcion"
-            value={formData.funcion}
-            valueChange={(e) =>
-              setFormData({ ...formData, funcion: e.target.value })
-            }
-          />
-          <Input
-            type="text"
-            icono={<BsEnvelopeFill />}
-            placeholder="Área Docente Especialista"
-            name="area_docente_especialista"
-            value={formData.area_docente_especialista}
-            valueChange={(e) =>
-              setFormData({
-                ...formData,
-                area_docente_especialista: e.target.value,
-              })
+              setFormData({ ...formData, titulo_obtenido: e.target.value })
             }
           />
           <Input
@@ -314,16 +303,6 @@ const AddDocente: React.FC<AddDocenteProps> = () => {
             value={formData.dependencia_nominal}
             valueChange={(e) =>
               setFormData({ ...formData, dependencia_nominal: e.target.value })
-            }
-          />
-          <Input
-            type="text"
-            icono={<BsEnvelopeFill />}
-            placeholder="Grado y Sección"
-            name="grado_seccion"
-            value={formData.grado_seccion}
-            valueChange={(e) =>
-              setFormData({ ...formData, grado_seccion: e.target.value })
             }
           />
           <Input
@@ -415,11 +394,11 @@ const AddDocente: React.FC<AddDocenteProps> = () => {
               setFormData({ ...formData, observaciones: e.target.value })
             }
           />
-          <BtnSubmitBasic text="Agregar Docente" loading={false} />
+          <BtnSubmitBasic text="Agregar Obrero" loading={false} />
         </form>
       </div>
     </LayoutForm>
   );
 };
 
-export default AddDocente;
+export default AddObrero;
