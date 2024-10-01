@@ -6,6 +6,7 @@ import docenteRouter from "./docente";
 import obrerosRouter from "./obrero";
 import administrativoRouter from "./administrativo";
 import cocineroRouter from "./cocinero";
+import asitenciaRouter from "./asistencia";
 
 export {
   inicioRouter,
@@ -14,4 +15,5 @@ export {
   obrerosRouter,
   administrativoRouter,
   cocineroRouter,
+  asitenciaRouter,
 };

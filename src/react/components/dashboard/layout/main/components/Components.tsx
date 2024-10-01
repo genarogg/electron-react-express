@@ -18,6 +18,9 @@ import AddAdministrativo from "./administrativos/crud/AddAdministrativo";
 import TabletCocinero from "./cocineras/cocineroObrero";
 import AddCocinero from "./cocineras/crud/AddCocineros";
 
+import AsistenciaTabla from "./asistencia/AsistenciaTabla";
+import AddAsistencia from "./asistencia/crud/AddAsistencia";
+
 const components = [
   {
     titleSecction: "inicio",
@@ -63,6 +66,11 @@ const components = [
         context: "bitacora",
         icon: <FaCalendarAlt />,
       },
+      {
+        component: AsistenciaTabla,
+        context: "Asistencia",
+        icon: <FaCalendarAlt />,
+      },
     ],
   },
   {
@@ -86,6 +94,11 @@ const components = [
       {
         component: AddCocinero,
         context: "agregar cocinero",
+        icon: <FaCalendarAlt />,
+      },
+      {
+        component: AddAsistencia,
+        context: "Asistencia",
         icon: <FaCalendarAlt />,
       },
     ],

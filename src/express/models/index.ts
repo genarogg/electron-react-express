@@ -4,12 +4,15 @@ import DocenteService from "./DocenteService";
 import ObreroService from "./ObreroService";
 import AdministrativoService from "./AdministrativoService";
 import CocineroService from "./CocineroService";
+import AsistenciaPersonalService from "./AsistenciaPersonalService";
+import getUserByCi from "./getUserByCi";
 
 const userService = new UserService();
 const docenteService = new DocenteService();
 const obreroService = new ObreroService();
 const administrativoService = new AdministrativoService();
 const cocineroService = new CocineroService();
+const asistenciaPersonalService = new AsistenciaPersonalService();
 
 export {
   databaseManager,
@@ -18,4 +21,6 @@ export {
   obreroService,
   administrativoService,
   cocineroService,
+  asistenciaPersonalService,
+  getUserByCi,
 };

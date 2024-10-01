@@ -13,10 +13,12 @@ interface TabletTrabajadorProps {
   onClick: () => void;
   datos: any;
   ir: string;
+  subname?: string;
 }
 
 const TabletTrabajador: React.FC<TabletTrabajadorProps> = ({
   nameTabla,
+  subname = "añadir un",
   onClick,
   datos,
   ir,
@@ -31,9 +33,11 @@ const TabletTrabajador: React.FC<TabletTrabajadorProps> = ({
 
   return (
     <LayoutTablet>
-      <div className="container-header-tablet">
+      <div className={`container-header-tablet ${nameTabla}`}>
         <BtnNormalBasic onClick={combinedFunction}>
-          <span>añadir un {nameTabla}</span>
+          <span>
+            {subname} {nameTabla}
+          </span>
         </BtnNormalBasic>
         <input
           type="text"
@@ -43,7 +47,7 @@ const TabletTrabajador: React.FC<TabletTrabajadorProps> = ({
       </div>
       <div className="ag-theme-alpine table-container">
         <AgGridReact
-          rowData={datos[0]}
+          rowData={datos[0].reverse()}
           columnDefs={datos[1]}
           pagination={true}
           paginationPageSize={30}
