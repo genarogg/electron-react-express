@@ -58,13 +58,15 @@ app.use((err: any, req: Request, res: Response, next: Function) => {
 });
 
 import fakeData from "./FakeData/index";
+import generateAsistencia from "./controllers/asistencia/generateAsistencia";
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console
     .log
     /* chalk.green.bold(`El servidor esta corriendo http://localhost:${PORT}`) */
     ();
-  fakeData();
+  await fakeData();
+  await generateAsistencia();
 });
 
 export default app;
