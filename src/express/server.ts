@@ -39,6 +39,7 @@ import {
   docenteRouter,
   obrerosRouter,
   administrativoRouter,
+  cocineroRouter
 } from "./routers/index";
 
 /* app.use("/", inicioRouter); */
@@ -46,6 +47,7 @@ app.use("/auth", authRouter);
 app.use("/docente", docenteRouter);
 app.use("/obrero", obrerosRouter);
 app.use("/administrativo", administrativoRouter);
+app.use("/cocinero", cocineroRouter);
 
 // Middleware de manejo de errores
 app.use((err: any, req: Request, res: Response, next: Function) => {

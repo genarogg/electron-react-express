@@ -15,6 +15,9 @@ import AddObrero from "./obreros/crud/AddObrero";
 import TabletAdministrativo from "./administrativos/TabletAdministrativo";
 import AddAdministrativo from "./administrativos/crud/AddAdministrativo";
 
+import TabletCocinero from "./cocineras/cocineroObrero";
+import AddCocinero from "./cocineras/crud/AddCocineros";
+
 const components = [
   {
     titleSecction: "inicio",
@@ -45,6 +48,11 @@ const components = [
         context: "administrativos",
         icon: <PiTableThin />,
       },
+      {
+        component: TabletCocinero,
+        context: "cocineros",
+        icon: <PiTableThin />,
+      },
     ],
   },
   {
@@ -73,6 +81,11 @@ const components = [
       {
         component: AddAdministrativo,
         context: "agregar administrativo",
+        icon: <FaCalendarAlt />,
+      },
+      {
+        component: AddCocinero,
+        context: "agregar cocinero",
         icon: <FaCalendarAlt />,
       },
     ],

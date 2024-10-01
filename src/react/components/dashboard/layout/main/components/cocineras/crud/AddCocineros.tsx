@@ -10,9 +10,9 @@ import { URL_BACKEND } from "@env";
 
 import LayoutForm from "../../layoutForm/LayoutForm";
 
-interface AddObreroProps {}
+interface AddCocineroProps {}
 
-const AddObrero: React.FC<AddObreroProps> = () => {
+const AddCocinero: React.FC<AddCocineroProps> = () => {
   const [formData, setFormData] = useState({
     cod_cir: "",
     nombre_circuito: "",
@@ -27,7 +27,7 @@ const AddObrero: React.FC<AddObreroProps> = () => {
     nombres: "",
     apellidos: "",
     ci: "",
-    acarigua: "",
+
     fecha_nac: "",
     telefono: "",
     direccion_de_habitacion: "",
@@ -53,9 +53,9 @@ const AddObrero: React.FC<AddObreroProps> = () => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
-    console.log("URL_BACKEND", `${URL_BACKEND}/obrero/add`);
+    console.log("URL_BACKEND", `${URL_BACKEND}/cocinero/add`);
 
-    fetch(`${URL_BACKEND}/obrero/add`, {
+    fetch(`${URL_BACKEND}/cocinero/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -394,11 +394,11 @@ const AddObrero: React.FC<AddObreroProps> = () => {
               setFormData({ ...formData, observaciones: e.target.value })
             }
           />
-          <BtnSubmitBasic text="Agregar Obrero" loading={false} />
+          <BtnSubmitBasic text="Agregar Cocinero" loading={false} />
         </form>
       </div>
     </LayoutForm>
   );
 };
 
-export default AddObrero;
+export default AddCocinero;

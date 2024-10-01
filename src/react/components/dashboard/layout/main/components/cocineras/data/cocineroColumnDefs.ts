@@ -1,10 +1,10 @@
 import { ColDef, ColGroupDef } from "ag-grid-community";
-import { ObreroPersonal } from "./obreroPersonal";
+import { CocineroPersonal } from "./cocineroPersonal";
 import ActionsCellRenderer from "../../cell-renderers/ActionsCellRenderer";
 
-const obreroColumnDefs: (
-  | ColDef<ObreroPersonal>
-  | ColGroupDef<ObreroPersonal>
+const cocineroColumnDefs: (
+  | ColDef<CocineroPersonal>
+  | ColGroupDef<CocineroPersonal>
 )[] = [
   {
     headerName: "ID",
@@ -61,7 +61,6 @@ const obreroColumnDefs: (
       { headerName: "NOMBRES", field: "nombres", filter: true },
       { headerName: "APELLIDOS", field: "apellidos", filter: true },
       { headerName: "C.I", field: "ci", filter: true },
-      { headerName: "ACARIGUA", field: "acarigua", filter: true },
       {
         headerName: "FECHA DE NAC. (DD/MM/AA)",
         field: "fecha_nac",
@@ -166,4 +165,4 @@ const obreroColumnDefs: (
   },
 ];
 
-export default obreroColumnDefs;
+export default cocineroColumnDefs;

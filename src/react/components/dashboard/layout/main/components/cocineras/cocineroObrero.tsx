@@ -1,25 +1,25 @@
-interface TabletObreroProps {}
+interface TabletCocineroProps {}
 import { URL_BACKEND } from "@env";
 import TabletTrabajador from "@components/tablet/TabletTrabajador";
 import React, { useEffect, useState } from "react";
 
-import { obreroPersonal, ObreroPersonal } from "./data/obreroPersonal";
-import docenteColumnDefs from "./data/obreroColumnDefs";
+import { CocineroPersonal, cocineroPersonal } from "./data/cocineroPersonal";
+import docenteColumnDefs from "./data/cocineroColumnDefs";
 
-const TabletObrero: React.FC<TabletObreroProps> = () => {
+const TabletCocinero: React.FC<TabletCocineroProps> = () => {
   const irAnadirObrero = () => {
     console.log("ir a añadir docente");
   };
 
-  const [obreros, setObreros] = useState<ObreroPersonal[]>([]);
+  const [cocineros, setCocinero] = useState<CocineroPersonal[]>([]);
 
   useEffect(() => {
-    const fetchObreros = async () => {
+    const fetchCocinero = async () => {
       try {
-        const response = await fetch(`${URL_BACKEND}/obrero/get`);
+        const response = await fetch(`${URL_BACKEND}/cocinero/get`);
         const data = await response.json();
         if (data.type === "success") {
-          setObreros(data.obreros);
+          setCocinero(data.cocineros);
         } else {
           console.error("Error al recuperar los datos de los docentes:", data);
         }
@@ -28,24 +28,24 @@ const TabletObrero: React.FC<TabletObreroProps> = () => {
       }
     };
 
-    fetchObreros();
+    fetchCocinero();
   }, []);
 
   const datos = [
-    obreros.length > 0 ? obreros : obreroPersonal,
+    cocineros.length > 0 ? cocineros : cocineroPersonal,
     docenteColumnDefs,
   ];
 
   return (
     <>
       <TabletTrabajador
-        nameTabla="obreros"
+        nameTabla="cocineros"
         onClick={irAnadirObrero}
         datos={datos}
-        ir={"agregar obrero"}
+        ir={"agregar cocinero"}
       />
     </>
   );
 };
 
-export default TabletObrero;
+export default TabletCocinero;

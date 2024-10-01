@@ -1,4 +1,4 @@
-interface ObreroPersonal {
+interface CocineroPersonal {
   id: number;
   cod_cir: string;
   nombre_circuito: string;
@@ -13,7 +13,6 @@ interface ObreroPersonal {
   nombres: string;
   apellidos: string;
   ci: string;
-  acarigua: string;
   fecha_nac: string;
   telefono: string;
   direccion_de_habitacion: string;
@@ -34,10 +33,10 @@ interface ObreroPersonal {
   observaciones: string;
 }
 
-const obreroPersonal: ObreroPersonal[] = [
+const cocineroPersonal: CocineroPersonal[] = [
   {
     id: 1,
-    cod_cir: "001",
+    cod_cir: "0201",
     nombre_circuito: "Circuito 1",
     comuna: "Comuna Centro",
     consejo_comunal: "Consejo Comunal 1",
@@ -50,7 +49,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Pedro",
     apellidos: "Gómez",
     ci: "12345678",
-    acarigua: "Acarigua A",
     fecha_nac: "12/12/1980",
     telefono: "04141234567",
     direccion_de_habitacion: "Av. Bolívar 321, Centro",
@@ -85,7 +83,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "María",
     apellidos: "Pérez",
     ci: "87654321",
-    acarigua: "Acarigua B",
     fecha_nac: "25/05/1975",
     telefono: "04148765432",
     direccion_de_habitacion: "Calle Las Palmas 789, Sur",
@@ -120,7 +117,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Luis",
     apellidos: "Rodríguez",
     ci: "23456789",
-    acarigua: "Acarigua C",
     fecha_nac: "30/11/1990",
     telefono: "04142345678",
     direccion_de_habitacion: "Av. Este 456, Este",
@@ -155,7 +151,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Ana",
     apellidos: "Fernández",
     ci: "34567890",
-    acarigua: "Acarigua D",
     fecha_nac: "14/07/1985",
     telefono: "04143456789",
     direccion_de_habitacion: "Calle Oeste 321, Oeste",
@@ -190,7 +185,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Carlos",
     apellidos: "Sánchez",
     ci: "45678901",
-    acarigua: "Acarigua E",
     fecha_nac: "05/06/1987",
     telefono: "04144567890",
     direccion_de_habitacion: "Av. Norte 543, Norte",
@@ -225,7 +219,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Lucía",
     apellidos: "Martínez",
     ci: "56789012",
-    acarigua: "Acarigua F",
     fecha_nac: "11/11/1983",
     telefono: "04145678901",
     direccion_de_habitacion: "Calle Sur 654, Sur",
@@ -260,7 +253,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Roberto",
     apellidos: "Díaz",
     ci: "67890123",
-    acarigua: "Acarigua G",
     fecha_nac: "22/02/1990",
     telefono: "04146789012",
     direccion_de_habitacion: "Calle Este 987, Este",
@@ -295,7 +287,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Carmen",
     apellidos: "López",
     ci: "78901234",
-    acarigua: "Acarigua H",
     fecha_nac: "30/03/1982",
     telefono: "04147890123",
     direccion_de_habitacion: "Av. Principal 222, Centro",
@@ -330,7 +321,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Andrés",
     apellidos: "Mendoza",
     ci: "89012345",
-    acarigua: "Acarigua I",
     fecha_nac: "17/09/1978",
     telefono: "04148901234",
     direccion_de_habitacion: "Av. Sucre 111, Oeste",
@@ -365,7 +355,6 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Felipe",
     apellidos: "Morales",
     ci: "90123456",
-    acarigua: "Acarigua J",
     fecha_nac: "04/04/1989",
     telefono: "04149012345",
     direccion_de_habitacion: "Calle Los Andes 333, Norte",
@@ -400,8 +389,8 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Laura",
     apellidos: "Ramírez",
     ci: "01234567",
-    acarigua: "Acarigua K",
-    fecha_nac: "10/10/1980",
+    fecha_nac: "10/10/180",
+
     telefono: "04140123456",
     direccion_de_habitacion: "Av. Principal 444, Este",
     correo_electronico: "laura.ramirez@example.com",
@@ -435,7 +424,7 @@ const obreroPersonal: ObreroPersonal[] = [
     nombres: "Diego",
     apellidos: "Vargas",
     ci: "12345678",
-    acarigua: "Acarigua L",
+
     fecha_nac: "09/09/1985",
     telefono: "04141234567",
     direccion_de_habitacion: "Calle Bolívar 765, Sur",
@@ -457,4 +446,4 @@ const obreroPersonal: ObreroPersonal[] = [
   },
 ];
 
-export { ObreroPersonal, obreroPersonal };
+export { CocineroPersonal, cocineroPersonal };
