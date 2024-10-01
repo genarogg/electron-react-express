@@ -27,7 +27,6 @@ const AddAdministrativo: React.FC<AddAdministrativoProps> = () => {
     nombres: "",
     apellidos: "",
     ci: "",
-    acarigua: "",
     fecha_nac: "",
     telefono: "",
     direccion_de_habitacion: "",
@@ -53,9 +52,9 @@ const AddAdministrativo: React.FC<AddAdministrativoProps> = () => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
-    console.log("URL_BACKEND", `${URL_BACKEND}/obrero/add`);
+    console.log("URL_BACKEND", `${URL_BACKEND}/administrativo/add`);
 
-    fetch(`${URL_BACKEND}/obrero/add`, {
+    fetch(`${URL_BACKEND}/administrativo/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +74,7 @@ const AddAdministrativo: React.FC<AddAdministrativoProps> = () => {
     <LayoutForm>
       <div className="container-form add-docente">
         <form
-          className="form-basic "
+          className="form-basic"
           onSubmit={(e) => {
             e.preventDefault();
             onSubmit(e);
@@ -394,7 +393,7 @@ const AddAdministrativo: React.FC<AddAdministrativoProps> = () => {
               setFormData({ ...formData, observaciones: e.target.value })
             }
           />
-          <BtnSubmitBasic text="Agregar Obrero" loading={false} />
+          <BtnSubmitBasic text="Agregar admin" loading={false} />
         </form>
       </div>
     </LayoutForm>

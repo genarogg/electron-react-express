@@ -4,5 +4,12 @@ import inicioRouter from "./inicio";
 import authRouter from "./auth";
 import docenteRouter from "./docente";
 import obrerosRouter from "./obrero";
+import administrativoRouter from "./administrativo";
 
-export { inicioRouter, authRouter, docenteRouter, obrerosRouter };
+export {
+  inicioRouter,
+  authRouter,
+  docenteRouter,
+  obrerosRouter,
+  administrativoRouter,
+};

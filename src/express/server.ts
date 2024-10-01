@@ -34,12 +34,18 @@ import databaseManager from "./models/configDB";
 })();
 
 // Importar rutas
-import { authRouter, docenteRouter, obrerosRouter } from "./routers/index";
+import {
+  authRouter,
+  docenteRouter,
+  obrerosRouter,
+  administrativoRouter,
+} from "./routers/index";
 
 /* app.use("/", inicioRouter); */
 app.use("/auth", authRouter);
 app.use("/docente", docenteRouter);
 app.use("/obrero", obrerosRouter);
+app.use("/administrativo", administrativoRouter);
 
 // Middleware de manejo de errores
 app.use((err: any, req: Request, res: Response, next: Function) => {
@@ -50,9 +56,10 @@ app.use((err: any, req: Request, res: Response, next: Function) => {
 import fakeData from "./FakeData/index";
 
 app.listen(PORT, () => {
-  console.log(
+  console
+    .log
     /* chalk.green.bold(`El servidor esta corriendo http://localhost:${PORT}`) */
-  );
+    ();
   fakeData();
 });
 

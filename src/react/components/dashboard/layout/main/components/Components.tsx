@@ -11,6 +11,10 @@ import AddDocente from "./docente/crud/AddDocente";
 
 import TabletObrero from "./obreros/TabletObrero";
 import AddObrero from "./obreros/crud/AddObrero";
+
+import TabletAdministrativo from "./administrativos/TabletAdministrativo";
+import AddAdministrativo from "./administrativos/crud/AddAdministrativo";
+
 const components = [
   {
     titleSecction: "inicio",
@@ -36,6 +40,11 @@ const components = [
         context: "obreros",
         icon: <PiTableThin />,
       },
+      {
+        component: TabletAdministrativo,
+        context: "administrativos",
+        icon: <PiTableThin />,
+      },
     ],
   },
   {
@@ -59,6 +68,11 @@ const components = [
       {
         component: AddObrero,
         context: "agregar obrero",
+        icon: <FaCalendarAlt />,
+      },
+      {
+        component: AddAdministrativo,
+        context: "agregar administrativo",
         icon: <FaCalendarAlt />,
       },
     ],

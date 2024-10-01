@@ -19,7 +19,7 @@ const TabletAdministrativo: React.FC<TabletAdministrativoProps> = () => {
         const response = await fetch(`${URL_BACKEND}/administrativo/get`);
         const data = await response.json();
         if (data.type === "success") {
-          setAdministrativo(data.Administrativo);
+          setAdministrativo(data.administrativos);
         } else {
           console.error("Error al recuperar los datos de los docentes:", data);
         }
@@ -42,7 +42,7 @@ const TabletAdministrativo: React.FC<TabletAdministrativoProps> = () => {
         nameTabla="Administrativo"
         onClick={irAnadirObrero}
         datos={datos}
-        ir={"agregar obrero"}
+        ir={"agregar administrativo"}
       />
     </>
   );
