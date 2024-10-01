@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getUserByCi } from "../../models";
+import { getUserByCi, asistenciaPersonalService } from "../../models";
 import moment from "moment";
 
 const addAsistenciaPersonalPost = async (req: Request, res: Response) => {
@@ -25,18 +25,19 @@ const addAsistenciaPersonalPost = async (req: Request, res: Response) => {
 
     // Obtener la fecha y hora actual del sistema
     const fecha = moment().format("YYYY-MM-DD");
-    const hora_entrada = moment().format("HH:mm:ss");
+    const hora_entrada = moment().format("hh:mm:ss A");
 
     console.log({ personal_id, nombres, apellidos, ci, fecha, hora_entrada });
 
     // Crear la asistencia personal
-    // await databaseManager.getDatabase().run(
-    //   `
-    //   INSERT INTO asistencia_personal (personal_id, nombres, apellidos, ci, fecha, hora_entrada)
-    //   VALUES (?, ?, ?, ?, ?, ?)
-    // `,
-    //   [personal_id, nombres, apellidos, ci, fecha, hora_entrada]
-    // );
+    await asistenciaPersonalService.createAsistenciaPersonal({
+      personal_id,
+      nombres,
+      apellidos,
+      ci,
+      fecha,
+      hora_entrada,
+    });
 
     return res.status(201).json({
       message: "Asistencia personal creada exitosamente",

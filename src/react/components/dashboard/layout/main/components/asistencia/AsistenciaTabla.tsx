@@ -20,15 +20,15 @@ const AsistenciaTabla: React.FC<AsistenciaTablaProps> = () => {
   };
 
   const [isActive, setIsActive] = useState(false);
-  const [cocineros, setCocinero] = useState<AsistenciaPersonal[]>([]);
+  const [asistencia, setAsistencia] = useState<AsistenciaPersonal[]>([]);
 
   useEffect(() => {
     const fetchCocinero = async () => {
       try {
-        const response = await fetch(`${URL_BACKEND}/cocinero/get`);
+        const response = await fetch(`${URL_BACKEND}/asistencia/get`);
         const data = await response.json();
         if (data.type === "success") {
-          setCocinero(data.cocineros);
+          setAsistencia(data.asistencias);
         } else {
           console.error("Error al recuperar los datos de los docentes:", data);
         }
@@ -41,7 +41,7 @@ const AsistenciaTabla: React.FC<AsistenciaTablaProps> = () => {
   }, []);
 
   const datos = [
-    cocineros.length > 0 ? cocineros : asistenciaPersonal,
+    asistencia.length > 0 ? asistencia : asistenciaPersonal,
     asistenciaColumnDefs,
   ];
 

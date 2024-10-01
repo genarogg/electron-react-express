@@ -231,6 +231,7 @@ class DatabaseManager {
         ci TEXT NOT NULL,
         fecha TEXT NOT NULL,
         hora_entrada TEXT,
+        vino BOOLEAN default 0,
         FOREIGN KEY(personal_id) REFERENCES users(id)
       );
     `;
@@ -244,6 +245,19 @@ class DatabaseManager {
 
   public getDatabase() {
     return this.db;
+  }
+
+  exec(query: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      //@ts-ignore
+      this.db.run(query, (err: any) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(this);
+        }
+      });
+    });
   }
 }
 
