@@ -18,6 +18,7 @@ class DatabaseManager {
     this.createObrerosTable(); // Crear la tabla 'obreros'
     this.createAdministrativosTable(); // Crear la tabla 'administrativos'
     this.createCocinerosTable(); // Crear la tabla 'cocineros'
+    this.createAsistenciaPersonalTable(); // Crear la tabla 'asistencia_personal'
   }
 
   private createUsersTable() {
@@ -217,6 +218,25 @@ class DatabaseManager {
       this.db.exec(createTableQuery);
     } catch (error) {
       console.error("Error al crear la tabla 'cocineros':", error);
+    }
+  }
+
+  private createAsistenciaPersonalTable() {
+    const createTableQuery = `
+      CREATE TABLE IF NOT EXISTS asistencia_personal (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        personal_id INTEGER NOT NULL,
+        ci TEXT NOT NULL,
+        fecha TEXT NOT NULL,
+        hora_entrada TEXT,
+        FOREIGN KEY(personal_id) REFERENCES users(id)
+      );
+    `;
+
+    try {
+      this.db.exec(createTableQuery);
+    } catch (error) {
+      console.error("Error al crear la tabla 'asistencia_personal':", error);
     }
   }
 
