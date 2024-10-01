@@ -10,9 +10,9 @@ import { URL_BACKEND } from "@env";
 
 import LayoutForm from "../../layoutForm/LayoutForm";
 
-interface AddObreroProps {}
+interface AddAdministrativoProps {}
 
-const AddObrero: React.FC<AddObreroProps> = () => {
+const AddAdministrativo: React.FC<AddAdministrativoProps> = () => {
   const [formData, setFormData] = useState({
     cod_cir: "",
     nombre_circuito: "",
@@ -401,4 +401,4 @@ const AddObrero: React.FC<AddObreroProps> = () => {
   );
 };
 
-export default AddObrero;
+export default AddAdministrativo;

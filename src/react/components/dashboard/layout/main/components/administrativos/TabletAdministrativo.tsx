@@ -1,25 +1,25 @@
-interface TabletObreroProps {}
+interface TabletAdministrativoProps {}
 import { URL_BACKEND } from "@env";
 import TabletTrabajador from "@components/tablet/TabletTrabajador";
 import React, { useEffect, useState } from "react";
 
-import { obreroPersonal, ObreroPersonal } from "./data/obreroPersonal";
-import docenteColumnDefs from "./data/obreroColumnDefs";
+import { administrativoPersonal, AdministrativoPersonal } from "./data/administrativoPersonal";
+import docenteColumnDefs from "./data/administrativoColumnDefs";
 
-const TabletObrero: React.FC<TabletObreroProps> = () => {
+const TabletAdministrativo: React.FC<TabletAdministrativoProps> = () => {
   const irAnadirObrero = () => {
     console.log("ir a añadir docente");
   };
 
-  const [obreros, setObreros] = useState<ObreroPersonal[]>([]);
+  const [Administrativo, setAdministrativo] = useState<AdministrativoPersonal[]>([]);
 
   useEffect(() => {
-    const fetchObreros = async () => {
+    const fetchAdministrativo = async () => {
       try {
-        const response = await fetch(`${URL_BACKEND}/obrero/get`);
+        const response = await fetch(`${URL_BACKEND}/administrativo/get`);
         const data = await response.json();
         if (data.type === "success") {
-          setObreros(data.obreros);
+          setAdministrativo(data.Administrativo);
         } else {
           console.error("Error al recuperar los datos de los docentes:", data);
         }
@@ -28,18 +28,18 @@ const TabletObrero: React.FC<TabletObreroProps> = () => {
       }
     };
 
-    fetchObreros();
+    fetchAdministrativo();
   }, []);
 
   const datos = [
-    obreros.length > 0 ? obreros : obreroPersonal,
+    Administrativo.length > 0 ? Administrativo : administrativoPersonal,
     docenteColumnDefs,
   ];
 
   return (
     <>
       <TabletTrabajador
-        nameTabla="obreros"
+        nameTabla="Administrativo"
         onClick={irAnadirObrero}
         datos={datos}
         ir={"agregar obrero"}
@@ -48,4 +48,4 @@ const TabletObrero: React.FC<TabletObreroProps> = () => {
   );
 };
 
-export default TabletObrero;
+export default TabletAdministrativo;

@@ -1,10 +1,10 @@
 import { ColDef, ColGroupDef } from "ag-grid-community";
-import { ObreroPersonal } from "./obreroPersonal";
+import { AdministrativoPersonal } from "./administrativoPersonal";
 import ActionsCellRenderer from "../../cell-renderers/ActionsCellRenderer";
 
-const obreroColumnDefs: (
-  | ColDef<ObreroPersonal>
-  | ColGroupDef<ObreroPersonal>
+const administrativoColumnDefs: (
+  | ColDef<AdministrativoPersonal>
+  | ColGroupDef<AdministrativoPersonal>
 )[] = [
   {
     headerName: "ID",
@@ -43,12 +43,6 @@ const obreroColumnDefs: (
         filter: true,
       },
       {
-        headerName: "DIRECCION DE LA INSTITUCION",
-        field: "direccion_institucion",
-        filter: true,
-      },
-
-      {
         headerName: "NIVEL O MODALIDAD",
         field: "nivel_modalidad",
         filter: true,
@@ -56,12 +50,11 @@ const obreroColumnDefs: (
     ],
   },
   {
-    headerName: "DATOS DEL PERSONAL OBRERO",
+    headerName: "DATOS DEL PERSONAL ADMINISTRATIVO",
     children: [
       { headerName: "NOMBRES", field: "nombres", filter: true },
       { headerName: "APELLIDOS", field: "apellidos", filter: true },
       { headerName: "C.I", field: "ci", filter: true },
-      { headerName: "ACARIGUA", field: "acarigua", filter: true },
       {
         headerName: "FECHA DE NAC. (DD/MM/AA)",
         field: "fecha_nac",
@@ -166,4 +159,4 @@ const obreroColumnDefs: (
   },
 ];
 
-export default obreroColumnDefs;
+export default administrativoColumnDefs;
