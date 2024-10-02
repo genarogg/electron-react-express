@@ -13,10 +13,9 @@ import asistenciaColumnDefs from "./data/asistenciaColumnDefs";
 
 const AsistenciaTabla: React.FC<AsistenciaTablaProps> = () => {
   const irAnadirObrero = () => {
-    console.log("ir a añadir docente");
-    setIsActive(!isActive);
-
+    console.log("isActive", isActive);
     document.getElementById("asideAsistencia")!.classList.toggle("active");
+    setIsActive(!isActive);
   };
 
   const [isActive, setIsActive] = useState(false);
@@ -38,9 +37,7 @@ const AsistenciaTabla: React.FC<AsistenciaTablaProps> = () => {
     };
 
     fetchCocinero();
-  }, []);
-
-  console.log("asistencia", asistencia);
+  }, [isActive]);
 
   const datos = [
     asistencia.length > 0 ? asistencia : asistenciaPersonal,
@@ -58,7 +55,7 @@ const AsistenciaTabla: React.FC<AsistenciaTablaProps> = () => {
       />
 
       <div className={`addAsistencia aside`} id="asideAsistencia">
-        <AddAsistencia></AddAsistencia>
+        <AddAsistencia fn={irAnadirObrero}></AddAsistencia>
       </div>
     </>
   );

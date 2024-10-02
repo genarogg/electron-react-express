@@ -11,16 +11,18 @@ const FooterNavSimple: React.FC<FooterNavSimpleProps> = () => {
 
   const handleReset = () => {
     dispatch({ type: ActionTypes.RESET_STATE });
-    A({ href: "/", type: "push" });
+    // A({ href: "/", type: "push" });
   };
 
   return (
     <>
       <footer className="nav-footer-simple">
         <Separador />
-        <BtnNormalBasic onClick={handleReset} className="cerrar-sesion">
-          <h2>Cerrar sesión</h2>
-        </BtnNormalBasic>
+        <A href="/">
+          <BtnNormalBasic onClick={handleReset} className="cerrar-sesion">
+            <h2>Cerrar sesión</h2>
+          </BtnNormalBasic>
+        </A>
       </footer>
     </>
   );

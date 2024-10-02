@@ -18,7 +18,9 @@ const addAsistenciaPersonalPost = async (req: Request, res: Response) => {
     const user = getUserByCi(ci);
 
     if (!user) {
-      return res.status(404).json({ error: "Usuario no encontrado" });
+      return res
+        .status(404)
+        .json({ message: "Usuario no encontrado", type: "error" });
     }
     const fechaNow = moment().format("YYYY-MM-DD");
 
@@ -29,7 +31,7 @@ const addAsistenciaPersonalPost = async (req: Request, res: Response) => {
 
     console.log("asistenciaDate", asistenciaDate);
 
-    const update = await asistenciaPersonalService.updateAsistenciaPersonal(
+    await asistenciaPersonalService.updateAsistenciaPersonal(
       asistenciaDate.id,
       {
         ...asistenciaDate,
@@ -37,11 +39,6 @@ const addAsistenciaPersonalPost = async (req: Request, res: Response) => {
         vino: 1,
       }
     );
-    console.log({
-      ...asistenciaDate,
-      hora_entrada: moment().format("hh:mm:ss A"),
-      vino: 1,
-    });
 
     return res.status(201).json({
       message: "Asistencia registrada correctamente",

@@ -35,13 +35,13 @@ ul {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: $color-quaternary;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $color-quaternary;
+  background: $color-secondary;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $color-quaternary;
+  background: $color-secondary;
 }

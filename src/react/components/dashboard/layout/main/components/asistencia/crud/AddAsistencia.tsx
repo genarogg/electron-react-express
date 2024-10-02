@@ -10,9 +10,11 @@ import { URL_BACKEND } from "@env";
 
 import LayoutForm from "../../layoutForm/LayoutForm";
 
-interface AddAsistenciaProps {}
+interface AddAsistenciaProps {
+  fn: () => void;
+}
 
-const AddAsistencia: React.FC<AddAsistenciaProps> = () => {
+const AddAsistencia: React.FC<AddAsistenciaProps> = ({fn}) => {
   const [formData, setFormData] = useState({
     ci: "",
   });
@@ -33,13 +35,21 @@ const AddAsistencia: React.FC<AddAsistenciaProps> = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log("data2", data);
+        
+        if (data.type === "error") {
+          notify({ message: data.message, type: data.type });
+          return;
+        }
+        // handleChangeContext("Asistencia", "");
+        setFormData({ ci: "" });
+        fn()
         notify({ message: data.message, type: data.type });
-        handleChangeContext(state.sub_context, "");
-        console.log("data", data);
+      })
+      .catch((error) => {
+        console.log("error", error);
       });
   };
-
-
 
   return (
     <LayoutForm>

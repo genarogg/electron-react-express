@@ -5,13 +5,15 @@ import Initial2 from "./Initial2";
 import { HiHome } from "react-icons/hi";
 import { PiTableThin } from "react-icons/pi";
 import { FaCalendarAlt } from "react-icons/fa";
-
+import { GrUserWorker } from "react-icons/gr"
+import { PiChefHatBold } from "react-icons/pi";
+import { PiStudentBold } from "react-icons/pi";
 import TabletDocente from "./docente/TabletDocente";
 import AddDocente from "./docente/crud/AddDocente";
-
+import { FaUsersLine } from "react-icons/fa6";
 import TabletObrero from "./obreros/TabletObrero";
 import AddObrero from "./obreros/crud/AddObrero";
-
+import { MdOutlineUpdate } from "react-icons/md";
 import TabletAdministrativo from "./administrativos/TabletAdministrativo";
 import AddAdministrativo from "./administrativos/crud/AddAdministrativo";
 
@@ -20,7 +22,7 @@ import AddCocinero from "./cocineras/crud/AddCocineros";
 
 import AsistenciaTabla from "./asistencia/AsistenciaTabla";
 import AddAsistencia from "./asistencia/crud/AddAsistencia";
-
+import { TbCheckupList } from "react-icons/tb";
 const components = [
   {
     titleSecction: "inicio",
@@ -38,23 +40,23 @@ const components = [
       {
         component: TabletDocente,
         context: "docentes",
-        icon: <PiTableThin />,
+        icon: <PiStudentBold />,
       },
 
       {
         component: TabletObrero,
         context: "obreros",
-        icon: <PiTableThin />,
+        icon: <GrUserWorker />,
       },
       {
         component: TabletAdministrativo,
         context: "administrativos",
-        icon: <PiTableThin />,
+        icon: <FaUsersLine />,
       },
       {
         component: TabletCocinero,
         context: "cocineros",
-        icon: <PiTableThin />,
+        icon: <PiChefHatBold />,
       },
     ],
   },
@@ -64,12 +66,12 @@ const components = [
       {
         component: Initial2,
         context: "bitacora",
-        icon: <FaCalendarAlt />,
+        icon: <MdOutlineUpdate />,
       },
       {
         component: AsistenciaTabla,
         context: "Asistencia",
-        icon: <FaCalendarAlt />,
+        icon: <TbCheckupList />,
       },
     ],
   },
@@ -96,11 +98,11 @@ const components = [
         context: "agregar cocinero",
         icon: <FaCalendarAlt />,
       },
-      {
+      /* {
         component: AddAsistencia,
         context: "Asistencia",
         icon: <FaCalendarAlt />,
-      },
+      }, */
     ],
   },
 ];

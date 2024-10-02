@@ -10,7 +10,7 @@
 
   position: fixed;
   top: 25px;
-  width: 100%;
+  width: calc(100% - 250px);
   z-index: 1000;
 
   .right {

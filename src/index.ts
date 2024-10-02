@@ -33,6 +33,9 @@ const createWindow = (): void => {
       nodeIntegration: true, // Asegúrate de que nodeIntegration esté habilitado
       contextIsolation: false, // Asegúrate de que contextIsolation esté deshabilitado
     },
+
+    title: "e.t. ademar vasquez chavez", // Establecer el título de la ventana
+    icon: path.join(__dirname, "./logo.ico"), // Ruta al icono de la aplicación
   });
 
   // Modificar la política de seguridad de contenido
