@@ -26,7 +26,7 @@ const LayoutSimpleDB: React.FC<LayoutSimpleDBProps> = ({ children }) => {
           </main>
         </div>
       </div>
-      {/* <footer className="footer-simple">Footer</footer> */}
+    
     </LayoutElectron>
   );
 };
