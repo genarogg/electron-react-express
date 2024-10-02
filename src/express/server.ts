@@ -42,6 +42,7 @@ import {
   cocineroRouter,
   asitenciaRouter,
   deleteRouter,
+  bitacoraRouter,
 } from "./routers/index";
 
 /* app.use("/", inicioRouter); */
@@ -52,7 +53,7 @@ app.use("/administrativo", administrativoRouter);
 app.use("/cocinero", cocineroRouter);
 app.use("/asistencia", asitenciaRouter);
 app.use("/usuario", deleteRouter);
-
+app.use("/bitacora", bitacoraRouter);
 // Middleware de manejo de errores
 app.use((err: any, req: Request, res: Response, next: Function) => {
   console.error(err.stack);
@@ -67,7 +68,7 @@ app.listen(PORT, async () => {
     .log
     /* chalk.green.bold(`El servidor esta corriendo http://localhost:${PORT}`) */
     ();
-  await fakeData();
+  // await fakeData();
   await asistencia();
 });
 

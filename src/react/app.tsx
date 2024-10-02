@@ -8,23 +8,23 @@ import "./scss/style.scss";
 import Provider from "@provider";
 
 const root = createRoot(document.body);
-// root.render(
-//   <Provider>
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<Login />} />
-//         <Route path="/dashboard" element={<Dashboard />} />
-//       </Routes>
-//     </Router>
-//   </Provider>
-// );
-
 root.render(
   <Provider>
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   </Provider>
 );
+
+// root.render(
+//   <Provider>
+//     <Router>
+//       <Routes>
+//         <Route path="/" element={<Dashboard />} />
+//       </Routes>
+//     </Router>
+//   </Provider>
+// );

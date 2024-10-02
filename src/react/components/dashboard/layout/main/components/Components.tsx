@@ -22,6 +22,8 @@ import AddCocinero from "./cocineras/crud/AddCocineros";
 
 import AsistenciaTabla from "./asistencia/AsistenciaTabla";
 import AddAsistencia from "./asistencia/crud/AddAsistencia";
+
+import TabletBitacora from "./bitacora/TabletBitacora";
 import { TbCheckupList } from "react-icons/tb";
 
 import Inicio from "./inicio/Inicio";
@@ -66,7 +68,7 @@ const components = [
     titleSecction: "bitacora",
     elements: [
       {
-        component: Initial2,
+        component: TabletBitacora,
         context: "bitacora",
         icon: <MdOutlineUpdate />,
       },
