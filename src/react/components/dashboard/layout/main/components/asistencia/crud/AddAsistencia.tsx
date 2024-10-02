@@ -39,6 +39,8 @@ const AddAsistencia: React.FC<AddAsistenciaProps> = () => {
       });
   };
 
+
+
   return (
     <LayoutForm>
       <div className="container-form add-docente">
@@ -60,7 +62,7 @@ const AddAsistencia: React.FC<AddAsistenciaProps> = () => {
             }
           />
 
-          <BtnSubmitBasic text="Agregar Cocinero" loading={false} />
+          <BtnSubmitBasic text="Registrar asistencia" loading={false} />
         </form>
       </div>
     </LayoutForm>

@@ -20,27 +20,31 @@ const addAsistenciaPersonalPost = async (req: Request, res: Response) => {
     if (!user) {
       return res.status(404).json({ error: "Usuario no encontrado" });
     }
+    const fechaNow = moment().format("YYYY-MM-DD");
 
-    const { personal_id, nombres, apellidos } = user;
+    const asistenciaDate = await asistenciaPersonalService.getAsistenciaPersonalByFechaYCi(
+      fechaNow,
+      ci
+    );
 
-    // Obtener la fecha y hora actual del sistema
-    const fecha = moment().format("YYYY-MM-DD");
-    const hora_entrada = moment().format("hh:mm:ss A");
+    console.log("asistenciaDate", asistenciaDate);
 
-    console.log({ personal_id, nombres, apellidos, ci, fecha, hora_entrada });
-
-    // Crear la asistencia personal
-    await asistenciaPersonalService.createAsistenciaPersonal({
-      personal_id,
-      nombres,
-      apellidos,
-      ci,
-      fecha,
-      hora_entrada,
+    const update = await asistenciaPersonalService.updateAsistenciaPersonal(
+      asistenciaDate.id,
+      {
+        ...asistenciaDate,
+        hora_entrada: moment().format("hh:mm:ss A"),
+        vino: 1,
+      }
+    );
+    console.log({
+      ...asistenciaDate,
+      hora_entrada: moment().format("hh:mm:ss A"),
+      vino: 1,
     });
 
     return res.status(201).json({
-      message: "Asistencia personal creada exitosamente",
+      message: "Asistencia registrada correctamente",
       type: "success",
     });
   } catch (error) {

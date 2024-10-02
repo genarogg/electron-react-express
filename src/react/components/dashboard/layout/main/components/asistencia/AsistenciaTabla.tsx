@@ -40,6 +40,8 @@ const AsistenciaTabla: React.FC<AsistenciaTablaProps> = () => {
     fetchCocinero();
   }, []);
 
+  console.log("asistencia", asistencia);
+
   const datos = [
     asistencia.length > 0 ? asistencia : asistenciaPersonal,
     asistenciaColumnDefs,

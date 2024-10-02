@@ -46,6 +46,12 @@ const asistenciaColumnDefs: (
     filter: true,
     width: 150,
   },
+  {
+    headerName: "Vino",
+    field: "vino",
+    filter: true,
+    width: 150,
+  },
 ];
 
 export default asistenciaColumnDefs;

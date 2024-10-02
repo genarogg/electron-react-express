@@ -231,8 +231,7 @@ class DatabaseManager {
         ci TEXT NOT NULL,
         fecha TEXT NOT NULL,
         hora_entrada TEXT,
-        vino BOOLEAN default 0,
-        FOREIGN KEY(personal_id) REFERENCES users(id)
+        vino BOOLEAN default 0
       );
     `;
 

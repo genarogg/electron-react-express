@@ -6,6 +6,7 @@ interface AsistenciaPersonal {
   ci: string;
   fecha: string;
   hora_entrada?: string;
+  vino?: boolean;
 }
 
 const asistenciaPersonal: AsistenciaPersonal[] = [
@@ -17,6 +18,7 @@ const asistenciaPersonal: AsistenciaPersonal[] = [
     ci: "12345678",
     fecha: "2023-10-01",
     hora_entrada: "08:00",
+    vino: true,
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ const asistenciaPersonal: AsistenciaPersonal[] = [
     ci: "87654321",
     fecha: "2023-10-01",
     hora_entrada: "08:05",
+    vino: true,
   },
   {
     id: 3,
@@ -35,6 +38,7 @@ const asistenciaPersonal: AsistenciaPersonal[] = [
     ci: "11223344",
     fecha: "2023-10-01",
     hora_entrada: "08:10",
+    vino: false,
   },
   {
     id: 4,
