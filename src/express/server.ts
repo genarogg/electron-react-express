@@ -41,6 +41,7 @@ import {
   administrativoRouter,
   cocineroRouter,
   asitenciaRouter,
+  deleteRouter,
 } from "./routers/index";
 
 /* app.use("/", inicioRouter); */
@@ -50,6 +51,7 @@ app.use("/obrero", obrerosRouter);
 app.use("/administrativo", administrativoRouter);
 app.use("/cocinero", cocineroRouter);
 app.use("/asistencia", asitenciaRouter);
+app.use("/usuario", deleteRouter);
 
 // Middleware de manejo de errores
 app.use((err: any, req: Request, res: Response, next: Function) => {

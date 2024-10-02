@@ -1,0 +1,9 @@
+// import express from "express";
+
+
+// const router = express.Router();
+
+// // Ruta para eliminar un usuario por su cédula
+// router.post("/:ci", ());
+
+// export default router;

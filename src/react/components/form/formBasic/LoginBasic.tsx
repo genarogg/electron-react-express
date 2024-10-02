@@ -68,7 +68,7 @@ const LoginBasic: React.FC<LoginBasicProps> = () => {
           }
         />
         <BtnSubmitBasic text="Iniciar sesion" loading={formData.loading} />
-        <BtnText text="Olvidaste tu contraseña?" onClick={() => {}} />
+        {/* <BtnText text="Olvidaste tu contraseña?" onClick={() => {}} /> */}
       </form>
     </div>
   );

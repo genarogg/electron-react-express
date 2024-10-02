@@ -23,12 +23,14 @@ import AddCocinero from "./cocineras/crud/AddCocineros";
 import AsistenciaTabla from "./asistencia/AsistenciaTabla";
 import AddAsistencia from "./asistencia/crud/AddAsistencia";
 import { TbCheckupList } from "react-icons/tb";
+
+import Inicio from "./inicio/Inicio";
 const components = [
   {
     titleSecction: "inicio",
     elements: [
       {
-        component: Initial,
+        component: Inicio,
         context: "Inicio",
         icon: <HiHome />,
       },

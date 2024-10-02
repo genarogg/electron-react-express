@@ -1,25 +1,50 @@
 import React from "react";
 import { DocentePersonal } from "../docente/data/docentePersonal";
 import { ObreroPersonal } from "../obreros/data/obreroPersonal";
+import { notify } from "@nano";
+import { BtnNormalBasic } from "@btn";
+import { URL_BACKEND } from "@env";
+
 interface ActionsCellRendererProps {
   data: DocentePersonal | ObreroPersonal;
 }
 
 const ActionsCellRenderer: React.FC<ActionsCellRendererProps> = ({ data }) => {
-  const handleEdit = (id: number) => {
+  const handleEdit = (ci: string) => {
     // Lógica para editar el docente
-    console.log("Editar docente:", id);
+    console.log("Editar docente:", ci);
   };
 
-  const handleDelete = (id: number) => {
-    // Lógica para eliminar el docente
-    console.log("Eliminar docente con ID:", id);
+  const handleDelete = async (ci: string) => {
+    try {
+      const response = await fetch(`${URL_BACKEND}/usuario/delete/${ci}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        notify({ message: errorData.error, type: "error" });
+      }
+
+      const result = await response.json();
+      console.log(result.message);
+      notify({ message: result.message, type: "success" });
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
     <div className="container-btn-tablet">
-      <button onClick={() => handleEdit(data.id)}>Editar</button>
-      <button onClick={() => handleDelete(data.id)}>Eliminar</button>
+      {/* <BtnNormalBasic onClick={() => handleEdit(data.ci)}>
+        Editar
+      </BtnNormalBasic> */}
+      <BtnNormalBasic onClick={() => handleDelete(data.ci)}>
+        Eliminar
+      </BtnNormalBasic>
     </div>
   );
 };

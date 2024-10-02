@@ -6,6 +6,7 @@ import AdministrativoService from "./AdministrativoService";
 import CocineroService from "./CocineroService";
 import AsistenciaPersonalService from "./AsistenciaPersonalService";
 import getUserByCi from "./getUserByCi";
+import deleteUserByCi from "./deleteUserByCi";
 
 const userService = new UserService();
 const docenteService = new DocenteService();
@@ -23,4 +24,5 @@ export {
   cocineroService,
   asistenciaPersonalService,
   getUserByCi,
+  deleteUserByCi
 };

@@ -7,6 +7,8 @@ import obrerosRouter from "./obrero";
 import administrativoRouter from "./administrativo";
 import cocineroRouter from "./cocinero";
 import asitenciaRouter from "./asistencia";
+// import usuarioRouter from "./users";
+import deleteRouter from "./delete";
 
 export {
   inicioRouter,
@@ -16,4 +18,5 @@ export {
   administrativoRouter,
   cocineroRouter,
   asitenciaRouter,
+  deleteRouter
 };
