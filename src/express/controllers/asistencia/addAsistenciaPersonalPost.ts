@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getUserByCi, asistenciaPersonalService } from "../../models";
+import { getUserByCi, asistenciaPersonalService, bitacoraService } from "../../models";
 import moment from "moment";
 
 const addAsistenciaPersonalPost = async (req: Request, res: Response) => {
@@ -39,6 +39,8 @@ const addAsistenciaPersonalPost = async (req: Request, res: Response) => {
         vino: 1,
       }
     );
+
+
 
     return res.status(201).json({
       message: "Asistencia registrada correctamente",

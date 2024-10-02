@@ -19,6 +19,7 @@ class DatabaseManager {
     this.createAdministrativosTable(); // Crear la tabla 'administrativos'
     this.createCocinerosTable(); // Crear la tabla 'cocineros'
     this.createAsistenciaPersonalTable(); // Crear la tabla 'asistencia_personal'
+    this.createBitacoraTablet();
   }
 
   private createUsersTable() {
@@ -239,6 +240,24 @@ class DatabaseManager {
       this.db.exec(createTableQuery);
     } catch (error) {
       console.error("Error al crear la tabla 'asistencia_personal':", error);
+    }
+  }
+
+  private createBitacoraTablet() {
+    const createTableQuery = `
+       CREATE TABLE IF NOT EXISTS bitacora (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      usuario TEXT NOT NULL,
+      accion TEXT NOT NULL,
+      fecha TEXT NOT NULL,
+      hora TEXT NOT NULL
+    );
+    `;
+
+    try {
+      this.db.exec(createTableQuery);
+    } catch (error) {
+      console.error("Error al crear la tabla 'bitacora':", error);
     }
   }
 

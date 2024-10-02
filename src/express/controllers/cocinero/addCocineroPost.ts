@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
-import CocineroService from "../../models/CocineroService";
-
-const cocineroService = new CocineroService();
+import { cocineroService, bitacoraService } from "../../models";
 
 const addCocineroPost = async (req: Request, res: Response) => {
   console.log("addCocineroPost");
@@ -82,6 +80,11 @@ const addCocineroPost = async (req: Request, res: Response) => {
       tipo_voto,
       centro_votacion,
       observaciones,
+    });
+
+    await bitacoraService.createBitacoraEntry({
+      usuario: "demo@demo.com",
+      accion: `Cocinero creado: ${nombres} ${apellidos} (${ci})`,
     });
 
     return res

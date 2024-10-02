@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { userService } from "../../models";
+import { userService, bitacoraService } from "../../models";
 import bcrypt from "bcryptjs";
 import { generarToken } from "../../functions";
 
@@ -22,6 +22,11 @@ const loginPost = async (req: Request, res: Response) => {
   }
 
   const token = generarToken(usuario);
+
+  await bitacoraService.createBitacoraEntry({
+    usuario: "demo@demo.com",
+    accion: `Inicio de sesión del usuario ${usuario.correo}`,
+  });
 
   //@Bitacora
 

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { deleteUserByCi } from "../models";
+import { deleteUserByCi, bitacoraService } from "../models";
 
 const deleteUserController = async (req: Request, res: Response) => {
   console.log("deleteUserController");
@@ -19,6 +19,11 @@ const deleteUserController = async (req: Request, res: Response) => {
         .status(404)
         .json({ message: "Usuario no encontrado", type: "error" });
     }
+
+    await bitacoraService.createBitacoraEntry({
+      usuario: "demo@demo.com",
+      accion: `Usuario eliminado: ${ci}`,
+    });
 
     return res.status(200).json({
       message: "Usuario eliminado exitosamente",

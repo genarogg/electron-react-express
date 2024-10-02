@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { administrativoService } from "../../models";
+import { administrativoService, bitacoraService } from "../../models";
 
 const addAdministrativoPost = async (req: Request, res: Response) => {
   console.log("addAdministrativoPost");
@@ -82,6 +82,13 @@ const addAdministrativoPost = async (req: Request, res: Response) => {
       tipo_voto,
       centro_votacion,
       observaciones,
+    });
+
+    // Crear el registro en la bitácora
+    await bitacoraService.createBitacoraEntry({
+      usuario: "demo@demo.com",
+      accion: `Administrativo creado: ${nombres} ${apellidos} (${ci})`,
+     
     });
 
     return res

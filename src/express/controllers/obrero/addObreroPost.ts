@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { obreroService } from "../../models";
+import { obreroService, bitacoraService } from "../../models";
 
 const addObreroPost = async (req: Request, res: Response) => {
   console.log("addObreroPost");
@@ -83,7 +83,10 @@ const addObreroPost = async (req: Request, res: Response) => {
       centro_votacion,
       observaciones,
     });
-
+    await bitacoraService.createBitacoraEntry({
+      usuario: "demo@demo.com",
+      accion: `Obrero creado: ${nombres} ${apellidos} (${ci})`,
+    });
     return res
       .status(201)
       .json({ message: "Obrero creado exitosamente", type: "success" });
